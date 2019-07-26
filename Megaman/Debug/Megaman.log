@@ -1,0 +1,24 @@
+﻿  MegamanRunningState.cpp
+e:\workspace thenewworld\temp5\megaman\logwriter.h(10): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+  e:\workspace thenewworld\temp5\megaman\megamanrunningstate.cpp: note: see previous definition of '_CRT_SECURE_NO_WARNINGS'
+e:\workspace thenewworld\temp5\megaman\camera.h(117): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(128): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(139): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(153): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(157): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(164): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(228): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\workspace thenewworld\temp5\megaman\camera.h(238): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(239): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(246): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\workspace thenewworld\temp5\megaman\camera.h(247): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\workspace thenewworld\temp5\megaman\sprite.h(49): warning C4018: '<': signed/unsigned mismatch
+e:\workspace thenewworld\temp5\megaman\sprite.h(57): warning C4018: '<': signed/unsigned mismatch
+e:\workspace thenewworld\temp5\megaman\megamanstate.h(44): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+e:\workspace thenewworld\temp5\megaman\megamanstate.h(61): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+e:\workspace thenewworld\temp5\megaman\megamanrunningstate.cpp(216): warning C4305: '=': truncation from 'double' to 'float'
+  Megaman.vcxproj -> E:\Workspace TheNewWorld\temp5\Megaman\Debug\Megaman.exe

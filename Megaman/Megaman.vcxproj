@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{FD782655-F234-4592-872E-A4755EE1B260}</ProjectGuid>
+    <RootNamespace>Megaman</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>E:\DirectX SDK\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\DirectX SDK\Lib\x86;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>StdCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BackGround.h" />
+    <ClInclude Include="base64.h" />
+    <ClInclude Include="BulletSprite.h" />
+    <ClInclude Include="BulletState.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CaptainKickActiveState.h" />
+    <ClInclude Include="CaptainKickData.h" />
+    <ClInclude Include="CaptainKickSprite.h" />
+    <ClInclude Include="CaptainSheildData.h" />
+    <ClInclude Include="CaptainSheildMovingState.h" />
+    <ClInclude Include="CaptainSheildSprite.h" />
+    <ClInclude Include="CollisionMap1.h" />
+    <ClInclude Include="CollisionRect.h" />
+    <ClInclude Include="define.h" />
+    <ClInclude Include="DoorData.h" />
+    <ClInclude Include="DoorSprite.h" />
+    <ClInclude Include="DoorState.h" />
+    <ClInclude Include="DoubleRocketData.h" />
+    <ClInclude Include="DoubleRocketDeadState.h" />
+    <ClInclude Include="DoubleRocketFireState.h" />
+    <ClInclude Include="DoubleRocketNormalBulletData.h" />
+    <ClInclude Include="DoubleRocketNormalBulletMovingState.h" />
+    <ClInclude Include="DoubleRocketNormalBulletSprite.h" />
+    <ClInclude Include="DoubleRocketSprite.h" />
+    <ClInclude Include="ElevatorData.h" />
+    <ClInclude Include="ElevatorSprite.h" />
+    <ClInclude Include="ElevatorWaittingState.h" />
+    <ClInclude Include="EnemyCreator.h" />
+    <ClInclude Include="EnemyData.h" />
+    <ClInclude Include="EnemySprite.h" />
+    <ClInclude Include="EnemyState.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="HPBarSprite.h" />
+    <ClInclude Include="HPSprite.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="LogWriter.h" />
+    <ClInclude Include="MegamanDamagedState.h" />
+    <ClInclude Include="MegamanDeathState.h" />
+    <ClInclude Include="MegamanJumpState.h" />
+    <ClInclude Include="MegamanSittingState.h" />
+    <ClInclude Include="MegamanSlideState.h" />
+    <ClInclude Include="MegamanStandingState.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="MegamanData.h" />
+    <ClInclude Include="MegamanSprite.h" />
+    <ClInclude Include="MegamanStartState.h" />
+    <ClInclude Include="MegamanState.h" />
+    <ClInclude Include="MegamanWallClimping.h" />
+    <ClInclude Include="MgmNormalBulletData.h" />
+    <ClInclude Include="MgmNormalBulletMovingState.h" />
+    <ClInclude Include="MgmNormalBulletSprite.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectData.h" />
+    <ClInclude Include="ObjectSprite.h" />
+    <ClInclude Include="ObjectState.h" />
+    <ClInclude Include="QuadTree.h" />
+    <ClInclude Include="Rect.h" />
+    <ClInclude Include="KeyBoard.h" />
+    <ClInclude Include="MegamanRunningState.h" />
+    <ClInclude Include="RocketFlyData.h" />
+    <ClInclude Include="RocketFlyDeadState.h" />
+    <ClInclude Include="RocketFlySprite.h" />
+    <ClInclude Include="RocketFlyState.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Scene1.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ShurikanBounceAttackState.h" />
+    <ClInclude Include="ShurikanData.h" />
+    <ClInclude Include="ShurikanDeadState.h" />
+    <ClInclude Include="ShurikanRunningAttackState.h" />
+    <ClInclude Include="ShurikanSprite.h" />
+    <ClInclude Include="ShurikanStartState.h" />
+    <ClInclude Include="ShurikanWallAttackState.h" />
+    <ClInclude Include="SingleGunData.h" />
+    <ClInclude Include="SingleGunDeadState.h" />
+    <ClInclude Include="SingleGunFireState.h" />
+    <ClInclude Include="SingleGunJumpingState.h" />
+    <ClInclude Include="SingleGunNormalBulletData.h" />
+    <ClInclude Include="SingleGunNormalBulletMovingState.h" />
+    <ClInclude Include="SingleGunNormalBulletSprite.h" />
+    <ClInclude Include="SingleGunSprite.h" />
+    <ClInclude Include="SingleGunStandState.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteData.h" />
+    <ClInclude Include="SpriteState.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureArray.h" />
+    <ClInclude Include="TileLayer.h" />
+    <ClInclude Include="TileSet.h" />
+    <ClInclude Include="TileTmx.h" />
+    <ClInclude Include="tinystr.h" />
+    <ClInclude Include="tinyxml.h" />
+    <ClInclude Include="UI.h" />
+    <ClInclude Include="Viewport.h" />
+    <ClInclude Include="zconf.h" />
+    <ClInclude Include="zlib.h" />
+    <ClInclude Include="ZuliaAimData.h" />
+    <ClInclude Include="ZuliaAimMovingState.h" />
+    <ClInclude Include="ZuliaAimSprite.h" />
+    <ClInclude Include="ZuliaAlphaFlyState.h" />
+    <ClInclude Include="ZuliaData.h" />
+    <ClInclude Include="ZuliaDeadState.h" />
+    <ClInclude Include="ZuliaNormalBulletData.h" />
+    <ClInclude Include="ZuliaNormalBulletSprite.h" />
+    <ClInclude Include="ZuliaNormalFlyState.h" />
+    <ClInclude Include="ZuliaNormalBulletMovingState.h" />
+    <ClInclude Include="ZuliaShoot2State.h" />
+    <ClInclude Include="ZuliaShootState.h" />
+    <ClInclude Include="ZuliaSpecialBulletData.h" />
+    <ClInclude Include="ZuliaSpecialBulletMovingState.h" />
+    <ClInclude Include="ZuliaSpecialBulletSprite.h" />
+    <ClInclude Include="ZuliaSprite.h" />
+    <ClInclude Include="ZuliaStingState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base64.cpp" />
+    <ClCompile Include="CaptainKickSprite.cpp" />
+    <ClCompile Include="CaptainSheildSprite.cpp" />
+    <ClCompile Include="DoorData.cpp" />
+    <ClCompile Include="DoorSprite.cpp" />
+    <ClCompile Include="DoorState.cpp" />
+    <ClCompile Include="DoubleRocketData.cpp" />
+    <ClCompile Include="DoubleRocketDeadState.cpp" />
+    <ClCompile Include="DoubleRocketFireState.cpp" />
+    <ClCompile Include="DoubleRocketNormalBulletSprite.cpp" />
+    <ClCompile Include="DoubleRocketSprite.cpp" />
+    <ClCompile Include="ElevatorData.cpp" />
+    <ClCompile Include="ElevatorSprite.cpp" />
+    <ClCompile Include="ElevatorWaittingState.cpp" />
+    <ClCompile Include="EnemyCreator.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="HPBarSprite.cpp" />
+    <ClCompile Include="HPSprite.cpp" />
+    <ClCompile Include="KeyBoard.cpp" />
+    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="LogWriter.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MegamanDamagedState.cpp" />
+    <ClCompile Include="MegamanDeathState.cpp" />
+    <ClCompile Include="MegamanJumpState.cpp" />
+    <ClCompile Include="MegamanRunningState.cpp" />
+    <ClCompile Include="MegamanSittingState.cpp" />
+    <ClCompile Include="MegamanSlideState.cpp" />
+    <ClCompile Include="MegamanSprite.cpp" />
+    <ClCompile Include="MegamanStandingState.cpp" />
+    <ClCompile Include="MegamanStartState.cpp" />
+    <ClCompile Include="MegamanWallClimping.cpp" />
+    <ClCompile Include="MgmNormalBulletSprite.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
+    <ClCompile Include="RocketFlyData.cpp" />
+    <ClCompile Include="RocketFlyDeadState.cpp" />
+    <ClCompile Include="RocketFlySprite.cpp" />
+    <ClCompile Include="RocketFlyState.cpp" />
+    <ClCompile Include="Scene1.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ShurikanBounceAttackState.cpp" />
+    <ClCompile Include="ShurikanData.cpp" />
+    <ClCompile Include="ShurikanDeadState.cpp" />
+    <ClCompile Include="ShurikanRunningAttackState.cpp" />
+    <ClCompile Include="ShurikanSprite.cpp" />
+    <ClCompile Include="ShurikanStartState.cpp" />
+    <ClCompile Include="ShurikanWallAttackState.cpp" />
+    <ClCompile Include="SingleGunData.cpp" />
+    <ClCompile Include="SingleGunDeadState.cpp" />
+    <ClCompile Include="SingleGunFireState.cpp" />
+    <ClCompile Include="SingleGunJumpingState.cpp" />
+    <ClCompile Include="SingleGunNormalBulletSprite.cpp" />
+    <ClCompile Include="SingleGunSprite.cpp" />
+    <ClCompile Include="SingleGunStandState.cpp" />
+    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureArray.cpp" />
+    <ClCompile Include="TileLayer.cpp" />
+    <ClCompile Include="TileTmx.cpp" />
+    <ClCompile Include="tinystr.cpp" />
+    <ClCompile Include="tinyxml.cpp" />
+    <ClCompile Include="tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxmlparser.cpp" />
+    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="Viewport.cpp" />
+    <ClCompile Include="winmain.cpp" />
+    <ClCompile Include="ZuliaAimSprite.cpp" />
+    <ClCompile Include="ZuliaAlphaFlyState.cpp" />
+    <ClCompile Include="ZuliaData.cpp" />
+    <ClCompile Include="ZuliaDeadState.cpp" />
+    <ClCompile Include="ZuliaNormalBulletSprite.cpp" />
+    <ClCompile Include="ZuliaNormalFlyState.cpp" />
+    <ClCompile Include="ZuliaShoot2State.cpp" />
+    <ClCompile Include="ZuliaShootState.cpp" />
+    <ClCompile Include="ZuliaSpecialBulletSprite.cpp" />
+    <ClCompile Include="ZuliaSprite.cpp" />
+    <ClCompile Include="ZuliaStingState.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

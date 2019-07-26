@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Gamecomponent">
+      <UniqueIdentifier>{a63b3bb0-e1df-4434-8d60-0298e18bbf16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{5c16e196-ba39-4d82-94c2-a59aa3780e0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Megaman">
+      <UniqueIdentifier>{5573a0bd-5c41-4fee-851f-5b2f6977847a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{005c1f86-dc94-4874-80d8-f9dc53defd01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets">
+      <UniqueIdentifier>{3ff0997f-95c3-466e-9f76-be39275d6583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies">
+      <UniqueIdentifier>{68f3c98d-fa27-482e-afe3-2edea2e78575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TintXml">
+      <UniqueIdentifier>{3218d13f-ebe2-42b3-88c3-4143cf7158a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Bullets\Megaman">
+      <UniqueIdentifier>{49a741b4-9f99-48f9-b27e-f8c96cd47715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies\SingleGun">
+      <UniqueIdentifier>{e903e5c2-abaf-4eaf-ac5d-80d632cf5f43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Elevator">
+      <UniqueIdentifier>{3fe20ada-85ef-48c4-9fe0-0f44914c5f1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\SingleGun">
+      <UniqueIdentifier>{6fa566df-d716-489d-9402-de3acee9eb62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\Shurikan">
+      <UniqueIdentifier>{a48d0ace-734e-41dc-a05b-969875785312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies\Shurikan">
+      <UniqueIdentifier>{9561de0f-dfa6-4bfd-a7ca-bfaa6d99a759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\HPBar">
+      <UniqueIdentifier>{1cab95ac-f361-498d-ad41-21e8acc85d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies\Zulia">
+      <UniqueIdentifier>{3250c8e0-dbf9-4e33-9a57-97f990730650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\Zulia">
+      <UniqueIdentifier>{1887a966-c340-416d-8a27-20c087c64428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\BG">
+      <UniqueIdentifier>{1c6ccd53-4087-4b7c-8be1-db25a5e439a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies\DoubleRocket">
+      <UniqueIdentifier>{ab382c23-5d6b-47ab-9bc3-7076a7c4309a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\DoubleRocket">
+      <UniqueIdentifier>{d8cf9090-a509-4b0f-aec8-b4e08b4d6751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Door">
+      <UniqueIdentifier>{e8e1c539-e798-47bd-b98f-1629548df9ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies\RocketFly">
+      <UniqueIdentifier>{d4df4ac9-e670-4178-a1a1-e1cfb230d822}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\Captain">
+      <UniqueIdentifier>{db71182b-77ef-4a11-8884-0a8b58dcc39d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KeyBoard.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionRect.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene1.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteData.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteState.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanSprite.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanData.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewport.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureArray.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanRunningState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanStandingState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinystr.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="zconf.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib.h">
+      <Filter>TintXml</Filter>
+    </ClInclude>
+    <ClInclude Include="TileTmx.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TileLayer.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanJumpState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanSlideState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanWallClimping.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="LogWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanStartState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanDeathState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletSprite.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletState.h">
+      <Filter>Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunData.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunSprite.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyData.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySprite.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyState.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletData.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletMovingState.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="MgmNormalBulletSprite.h">
+      <Filter>Bullets\Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyCreator.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunStandState.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunJumpingState.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectData.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectSprite.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectState.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ElevatorSprite.h">
+      <Filter>Objects\Elevator</Filter>
+    </ClInclude>
+    <ClInclude Include="ElevatorData.h">
+      <Filter>Objects\Elevator</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunNormalBulletData.h">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunNormalBulletSprite.h">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunNormalBulletMovingState.h">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunFireState.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanData.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanSprite.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanStartState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanRunningAttackState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanWallAttackState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanBounceAttackState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanDamagedState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="HPBarSprite.h">
+      <Filter>Objects\HPBar</Filter>
+    </ClInclude>
+    <ClInclude Include="HPSprite.h">
+      <Filter>Objects\HPBar</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaData.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaSprite.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaNormalFlyState.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaAlphaFlyState.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaStingState.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaNormalBulletData.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaNormalBulletSprite.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaShootState.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaNormalBulletMovingState.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaShoot2State.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>Gamecomponent</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleRocketSprite.h">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleRocketData.h">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleRocketFireState.h">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleRocketNormalBulletData.h">
+      <Filter>Bullets\DoubleRocket</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleRocketNormalBulletSprite.h">
+      <Filter>Bullets\DoubleRocket</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleRocketNormalBulletMovingState.h">
+      <Filter>Bullets\DoubleRocket</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleGunDeadState.h">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClInclude>
+    <ClInclude Include="DoorSprite.h">
+      <Filter>Objects\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="DoorData.h">
+      <Filter>Objects\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="DoorState.h">
+      <Filter>Objects\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="ElevatorWaittingState.h">
+      <Filter>Objects\Elevator</Filter>
+    </ClInclude>
+    <ClInclude Include="ShurikanDeadState.h">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaSpecialBulletMovingState.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaSpecialBulletSprite.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaDeadState.h">
+      <Filter>Enemies\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketFlySprite.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketFlyState.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketFlyData.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketFlyDeadState.h">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleRocketDeadState.h">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaSpecialBulletData.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaAimData.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaAimSprite.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="ZuliaAimMovingState.h">
+      <Filter>Bullets\Zulia</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainSheildData.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainSheildSprite.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainSheildMovingState.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainKickSprite.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainKickData.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="MegamanSittingState.h">
+      <Filter>Megaman</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainKickActiveState.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMap1.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KeyBoard.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene1.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewport.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureArray.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanSprite.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinystr.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>TintXml</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanStandingState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="TileTmx.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="TileLayer.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="winmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanRunningState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanJumpState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanSlideState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanWallClimping.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="LogWriter.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanStartState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanDeathState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunData.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunSprite.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="MgmNormalBulletSprite.cpp">
+      <Filter>Bullets\Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyCreator.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunStandState.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunJumpingState.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="ElevatorSprite.cpp">
+      <Filter>Objects\Elevator</Filter>
+    </ClCompile>
+    <ClCompile Include="ElevatorData.cpp">
+      <Filter>Objects\Elevator</Filter>
+    </ClCompile>
+    <ClCompile Include="ElevatorWaittingState.cpp">
+      <Filter>Objects\Elevator</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunNormalBulletSprite.cpp">
+      <Filter>Bullets\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunFireState.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanData.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanSprite.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanStartState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanRunningAttackState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanWallAttackState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanBounceAttackState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanDamagedState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Gamecomponent</Filter>
+    </ClCompile>
+    <ClCompile Include="HPBarSprite.cpp">
+      <Filter>Objects\HPBar</Filter>
+    </ClCompile>
+    <ClCompile Include="HPSprite.cpp">
+      <Filter>Objects\HPBar</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaData.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaSprite.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaNormalFlyState.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaAlphaFlyState.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaStingState.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaNormalBulletSprite.cpp">
+      <Filter>Bullets\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaShootState.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaShoot2State.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleRocketSprite.cpp">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleRocketData.cpp">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleRocketFireState.cpp">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleRocketNormalBulletSprite.cpp">
+      <Filter>Bullets\DoubleRocket</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleGunDeadState.cpp">
+      <Filter>Enemies\SingleGun</Filter>
+    </ClCompile>
+    <ClCompile Include="DoorData.cpp">
+      <Filter>Objects\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="DoorState.cpp">
+      <Filter>Objects\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="DoorSprite.cpp">
+      <Filter>Objects\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="ShurikanDeadState.cpp">
+      <Filter>Enemies\Shurikan</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaSpecialBulletSprite.cpp">
+      <Filter>Bullets\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaDeadState.cpp">
+      <Filter>Enemies\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlySprite.cpp">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlyState.cpp">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlyData.cpp">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketFlyDeadState.cpp">
+      <Filter>Enemies\RocketFly</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleRocketDeadState.cpp">
+      <Filter>Enemies\DoubleRocket</Filter>
+    </ClCompile>
+    <ClCompile Include="ZuliaAimSprite.cpp">
+      <Filter>Bullets\Zulia</Filter>
+    </ClCompile>
+    <ClCompile Include="CaptainSheildSprite.cpp">
+      <Filter>Bullets\Captain</Filter>
+    </ClCompile>
+    <ClCompile Include="MegamanSittingState.cpp">
+      <Filter>Megaman</Filter>
+    </ClCompile>
+    <ClCompile Include="CaptainKickSprite.cpp">
+      <Filter>Bullets\Captain</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>
