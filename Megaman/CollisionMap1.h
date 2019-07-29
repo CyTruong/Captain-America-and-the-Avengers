@@ -37,11 +37,19 @@ collisionMap1::collisionMap1()
 
 
 	r.x = 3 * 16;
-	r.y = 12 * 25;
+	r.y = 16 * 25;
 	r.width = 16 * 3;
 	r.height = 16;
 	col.rect = r;
 	col.type = "ground";
+	collisionRectFs.push_back(col);
+
+	r.x = 20 * 16;
+	r.y = 16 * 15;
+	r.width = 16 * 2;
+	r.height = 16*15;
+	col.rect = r;
+	col.type = "wall";
 	collisionRectFs.push_back(col);
 
 
