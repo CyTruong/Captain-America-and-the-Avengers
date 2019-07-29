@@ -6,7 +6,9 @@
 #define SCREEN_HEIGHT 480	
 #define SCREEN_WIDTH 480
 #define RESOURCE_SPRITE "Resource\\Sprite\\"
-
+#define NUMBER_COLUMM_MAP1 128
+#define NUMBER_ROW_MAP1 30
+#define TILE_SIZE 16
 
 #define MEGAMANRUNSPEED 3
 #define SINGLEGUNRUNSPEED 1.25
@@ -22,7 +24,8 @@
 enum BulletTypes
 {
 	SHEILD,
-	KICK
+	KICK,
+	PUNCH
 };
 
 enum BulletSize

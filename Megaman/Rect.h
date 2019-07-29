@@ -2,6 +2,7 @@
 #include <list>
 #include <vector>
 #include "define.h"
+#include "Direction.h"
 template <class T>
 
 class Rect {
@@ -35,6 +36,8 @@ public:
 	// Swept AABB 
 	bool isColliding(const Rect& object, const Rect& other)
 	{
+
+
 		float left = other.x - (object.x + object.width);
 		float top = (other.y + other.height) - object.y;
 		float right = (other.x + other.width) - object.x;
@@ -44,7 +47,7 @@ public:
 		return !(left > 0 || right < 0 || top < 0 || bottom > 0);
 	}
 	// tạo rect từ trạng thái ban đầu và tiếp theo để kiểm tra xem sau đó có vacham k 
-	Rect getSweptBroadphaseRect(const Rect& object)
+	Rect getSweptBroadphaseRect(const Rect object)
 	{
 		float x = object.vx > 0 ? object.x : object.x + object.vx;
 		float y = object.vy > 0 ? object.y : object.y + object.vy;
@@ -54,7 +57,7 @@ public:
 		return Rect(x, y, w, h);
 	}
 
-	float sweptAABB(const Rect& object, const Rect& other, int & result)
+	float sweptAABB(const Rect& object, const Rect& other, Direction & result)
 	{   // khoảng cách để va chạm và kc để hết va cham
 		float dxEntry, dxExit;
 		float dyEntry, dyExit;
@@ -179,15 +182,34 @@ public:
 	//kiểm tra xem 2 rect có va chạm nhau không
 	bool checkCollision(Rect r2)
 	{
-		if (this->x + this->width <= (T)r2.x)
-			return false;
-		if (this->x >= r2.x + (T)r2.width)
-			return false;
-		if (this->y + this->height <= (T)r2.y)
-			return false;
-		if (this->y >= r2.y + (T)r2.height)
-			return false;
-		return true;
+
+
+		/*	if (this->x + this->width <= (T)r2.x)
+				return false;
+			if (this->x >= r2.x + (T)r2.width)
+				return false;
+			if (this->y + this->height <= (T)r2.y)
+				return false;
+			if (this->y >= r2.y + (T)r2.height)
+				return false;
+			return true;*/
+			// new change 
+
+
+
+		Rect other = r2;
+		//
+
+		Rect object = *this;
+		object = getSweptBroadphaseRect(object);
+		float left = other.x - (object.x + object.width);
+		float top = (other.y + other.height) - object.y;
+		float right = (other.x + other.width) - object.x;
+		float bottom = other.y - (object.y + object.height);
+
+		// mình xét ngược lại cho nhanh hơn
+		return !(left > 0 || right < 0 || top < 0 || bottom > 0);
+
 	}
 
 	//kiểm tra xem rect có nằm trong this hay không ( chỉ xét trục X )

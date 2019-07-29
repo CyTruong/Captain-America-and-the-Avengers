@@ -9,21 +9,13 @@ Map::Map(std::string mapName)
 	mapName(mapName)
 {
 	//change tmx >txt 
-	std::string convertFileName = std::string("Resource\\Map\\") + (mapName)+std::string(".tmx");
 
 	//change de xml 
-	TiXmlDocument levelDocument;
-	levelDocument.LoadFile(convertFileName);
-	TiXmlElement* pRoot = levelDocument.RootElement();
-	pRoot->Attribute("tilewidth", &tileSize);
-	pRoot->Attribute("width", &width);
-	pRoot->Attribute("height", &height);
-
-	//mang cac REct collision 
-
 
 	// load tile set
-
+	this->width = NUMBER_COLUMM_MAP1;
+	this->height = NUMBER_ROW_MAP1;
+	this->tileSize = TILE_SIZE;
 	loadTileSet();
 
 	// load from file txt 

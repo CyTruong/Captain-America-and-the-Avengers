@@ -139,6 +139,7 @@ void MegamanSittingState::onFireRelease()
 		{
 			angle = M_PI;
 		}
+		//this->pData->bulletType = BulletTypes::PUNCH;
 		createBullet(bulletX, bulletY, angle);
 	}
 }

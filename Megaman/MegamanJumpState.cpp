@@ -367,8 +367,9 @@ void MegamanJumpState::onCollision(CollisionRectF rect)
 			if ((-vy * px) > (-vx * py))
 			{
 				// top collision
-				pData->y += py;
+				//cy//pData->y += py;
 				pData->vy = 0.0f;
+				pData->x -= 10;
 			}
 			else
 			{

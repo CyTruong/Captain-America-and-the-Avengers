@@ -318,7 +318,7 @@ void Scene1::Update()
 	{
 		if (cam->pCamPos[j].d==0)
 		{
-			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 240 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 120)
+			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 480 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 240)
 			{
 
 				i = j;
@@ -326,7 +326,7 @@ void Scene1::Update()
 		}
 		if (cam->pCamPos[j].d == 1)
 		{
-			if (Mx > cam->pCamPos[j].a &&Mx<cam->pCamPos[j].a + 240 && My > cam->pCamPos[j].b&&My <= cam->pCamPos[j].c+120)
+			if (Mx > cam->pCamPos[j].a &&Mx<cam->pCamPos[j].a + 480 && My > cam->pCamPos[j].b&&My <= cam->pCamPos[j].c+240)
 			{
 				i = j; 
 
@@ -335,7 +335,7 @@ void Scene1::Update()
 		}
 		if (cam->pCamPos[j].d ==2 )
 		{
-			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 240 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 240)
+			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 480 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 240)
 			{
 
 				i = j;

@@ -62,6 +62,10 @@ public:
 			pData->Bullets.push_back(new CaptainKickSprite(this->pData->bulletSize, x, y, speed, angle));
 			return;
 		}
+		case BulletTypes::PUNCH:
+		{
+			return;
+		}
 		}
 		//thêm các loại đạn ở đây
 	}
