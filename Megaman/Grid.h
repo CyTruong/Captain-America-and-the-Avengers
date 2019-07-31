@@ -88,11 +88,15 @@ public:
 			for (int j = posX; j <= posX2; j++) {
 				for (int k = 0; k < Nodes[i][j].arrCollisionRecF.size(); k++) {
 					if (Nodes[i][j].arrCollisionRecF[k].rect.checkCollision(camRect)) {
+						if (returnList.size() >100) {
+							int asd = 0;
+						}
 						returnList.push_back(Nodes[i][j].arrCollisionRecF[k]);
 					}
 				}
 			}
 		}
+		LogWriter::getInstance()->write("get objs of obj at",object.x , object.y);
 		LogWriter::getInstance()->write("Lấy obj 2 done ,size", returnList.size(), -222);
 
 	}

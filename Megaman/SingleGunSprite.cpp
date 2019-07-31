@@ -38,7 +38,8 @@ SingleGunSprite::SingleGunSprite(float x, float y, Direction dir, bool isShoter,
 	this->pData->x = this->pData->respawnX;
 	this->pData->y = this->pData->respawnY;
 
-	this->pData->pState = new SingleGunStandState(this->pData);
+	//this->pData->pState = new SingleGunStandState(this->pData);
+	this->pData->pState = new SingleGunJumpingState(this->pData);
 
 }
 

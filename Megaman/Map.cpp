@@ -288,6 +288,7 @@ void Map::loadObject()
 	int height;
 	std::string name;
 	std::string type;
+
 	//for (TiXmlElement* e = pElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	//{
 	//	name = e->Attribute("name");
@@ -324,7 +325,9 @@ void Map::loadObject()
 	//	}
 
 	//}
-
+	
+	Object* enemy = new Object("SingleGun", "enemy", 600, 200, 2, 20, 20, RectF(600, 200, 20, 20));
+	Objects.push_back(enemy);
 
 }
 
@@ -449,6 +452,7 @@ void Map::addEToMap(Camera* cam)
 {
 	
 	//mapCollisionTree->clear();
+	//Thêm obj collision vào list có thể va chạm 
 	mapCollisionGrid->clear();
 	for (int i = 0; i < Objects.size(); i++)
 	{
@@ -456,11 +460,14 @@ void Map::addEToMap(Camera* cam)
 		if (EnemyMap.find(Objects[i]->id) == EnemyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
 			mapCollisionGrid->insert(Objects[i]);
 	}
+
+	//Lấy danh sách các object trong cam
 	std::vector < Object * > returnList;
 
 	RectF camRect = cam->getRect();
 	mapCollisionGrid->getObjectlist(returnList, camRect);
 
+	//Với mỗi obj trong map , thêm vào obj map hay enemy map
 	for (int i = 0; i < returnList.size(); i++)
 	{
 		RectF body = returnList[i]->body;
@@ -468,7 +475,7 @@ void Map::addEToMap(Camera* cam)
 		if (camRect.checkCollision(body))
 		{
 			Direction appearDir = EnemyCreator::getInstance()->getAppearDir(returnList[i]->name);
-			if (1)
+			if (EnemyMap.find(returnList[i]->id) == EnemyMap.end() && objectMap.find(returnList[i]->id) == objectMap.end())
 			{
 				if (type == "enemy")
 				{
@@ -1007,8 +1014,8 @@ void Map::onUpdate(Camera* cam)
 
 
 
-	/*cleanMap(cam);
-	addEToMap(cam);*/
+	//cleanMap(cam);
+	addEToMap(cam);
 
 
 
