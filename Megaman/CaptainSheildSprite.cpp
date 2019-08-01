@@ -11,6 +11,8 @@ CaptainSheildSprite::CaptainSheildSprite(int size, float x, float y, float speed
 	this->pData->ppTextureArrays = new TextureArray*[CaptainSheildData::COUNT];
 	this->pData->bodyRects = new RectF[CaptainSheildData::COUNT];
 
+	UIComponents::getInstance()->setisSheildFlying(false);
+
 	this->angle = angle;
 
 	//if (bulletSize == BulletSize::SMALL) {

@@ -47,7 +47,7 @@ Scene1::Scene1()
 	viewPortSize = VIEWPORT_SIZE;
 	viewPort = new ViewPort(RectI(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
 
-	Cambounds camBounds; 
+	Cambounds camBounds(mapName); 
 
 	cam = new Camera(viewPort, startPointX, startPointY, RectF(0, 0, TILE_SIZE * 16, TILE_SIZE * 16), RectF(0, 0, numberColumOfMap * TILE_SIZE, numberRowOfMap * TILE_SIZE), camBounds.getCamBounds(), 2);
 
@@ -196,33 +196,6 @@ void Scene1::handlerInput()
 }
 void Scene1::onUpdate()
 {
-	//	if (isGameOver)
-	//	{
-	//		count++;
-	//		if (count == nTransitionFrames)
-	//		{
-	//			//GameSaveLoad::getInstance()->checkAndSaveScore(UIComponents::getInstance()->getScore());
-	//			SceneManager::getInstance()->createSceneWithRandomTransition(new GameOverScene());
-	//			return;
-	//		}
-	//	}
-	//	else if (isFinish)
-	//	{
-	//		count++;
-	//		if (count == nTransitionFrames)
-	//		{
-	//			if (UIComponents::getInstance()->getCurrentStage() < 3)
-	//			{
-	//				UIComponents::getInstance()->setStage(UIComponents::getInstance()->getCurrentStage() + 1);
-	//				SceneManager::getInstance()->createScene(new LoadingScene());
-	//			}
-	//			else
-	//			{
-	//				SceneManager::getInstance()->createScene(new EndingScene());
-	//			}
-	//			return;
-	//		}
-	//	}
 
 	this->handlerInput(); 
 

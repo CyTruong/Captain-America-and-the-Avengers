@@ -10,7 +10,7 @@ void Boss1Scene::loadSound()
 
 Boss1Scene::Boss1Scene()
 {     
-	std::string mapName = "Boss1Map";
+	std::string mapName = "BossMap1";
 
 	pMap = new Map(mapName);
 
@@ -31,11 +31,11 @@ Boss1Scene::Boss1Scene()
 
 
 	//cam = new Camera(viewPort, startPointX, startPointY, RectF(0, 0, TILE_SIZE * 16, TILE_SIZE * 16), RectF(0, 0, numberColumOfMap * TILE_SIZE, numberRowOfMap * TILE_SIZE));
-	Cambounds camBounds;
+	Cambounds camBounds (mapName);
 
 	cam = new Camera(viewPort, startPointX, startPointY, RectF(0, 0, TILE_SIZE * 16, TILE_SIZE * 16), RectF(0, 0, numberColumOfMap * TILE_SIZE, numberRowOfMap * TILE_SIZE), camBounds.getCamBounds(), 2);
 
-	pMegaman = new MegamanSprite(TILE_SIZE * 2, TILE_SIZE * 8, cam->getMoveDir());
+	pMegaman = new MegamanSprite(TILE_SIZE * 2, TILE_SIZE * 2, cam->getMoveDir());
 	//pMegaman = new MegamanSprite(7500, 1800, cam->getMoveDir());
    //pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
    //pMegaman = new MegamanSprite(120, 120+16*48, cam->getMoveDir());

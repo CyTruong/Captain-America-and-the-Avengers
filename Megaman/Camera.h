@@ -58,7 +58,8 @@ public:
 	Camera(ViewPort* viewPort, float x, float y, RectF rect, RectF cameraTranslatePoint, vector<CamBound > cbounds, int nBounds )
 	{
 		camBounds = cbounds; 
-		numberOfBound = nBounds; 
+		numberOfBound = cbounds.size();
+
 
 		this->viewPort = viewPort;
 		
@@ -211,7 +212,7 @@ public:
 				}
 				if (playerX >=camBounds[i].xb + s / 2)
 				{
-					this->x = camBounds[i].xb;
+					this->x = camBounds[i].xb ;
 
 				}
 

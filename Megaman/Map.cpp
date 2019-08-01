@@ -60,19 +60,10 @@ Map::Map(std::string mapName)
 	//}
 	vector<CollisionRectF> colRectF; 
 
-	if (mapName=="Map1")
-	{
-		collisionMap1 colRect;
+
+		collisionMap1 colRect(mapName);
 	
 		colRectF= colRect.getColRectF();
-	}
-	else
-	{
-		collisionBossMap1 colRect;
-
-		colRectF = colRect.getColRectF();
-	}
-	
 
 
 	loadCollisionRect(colRectF);
@@ -162,8 +153,10 @@ void Map::loadTileSet(string mapname)
 	Graphics::getInstance()->loadTexture(s, tileSet->name);
 	tileSet->pTexture = Graphics::getInstance()->getTexture(tileSet->name)->pTexture;
 
-	tileSet->width = TILE_SIZE*128; 
-	tileSet->height = 16*30;
+	
+
+	tileSet->width = TILE_SIZE*this->width; 
+	tileSet->height = TILE_SIZE*this->height;
 	tileSet->firstGridID = 0;
 	tileSet->tileWidth = TILE_SIZE;
 	tileSet->tileHeight = TILE_SIZE;
@@ -335,9 +328,23 @@ void Map::loadObject()
 	//	}
 
 	//}
+	if (mapName=="Map1")
+	{
+		Object* enemy = new Object("BlueSoldier", "enemy", 160, 320, 0, 24, 43, RectF(160, 320, 24, 43));
+		Objects.push_back(enemy);
+
+		// enemy 2 
+
+
+	}
+
+	else
+	{
+		Object* enemy = new Object("Wizard", "enemy", 160, 160, 0, 24, 43, RectF(160, 160, 24, 43));
+		Objects.push_back(enemy);
+
+	}
 	
-	Object* enemy = new Object("BlueSoldier", "enemy", 160, 320, 0, 24, 43, RectF(160, 320, 24, 43));
-	Objects.push_back(enemy);
 
 }
 

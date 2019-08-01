@@ -39,39 +39,43 @@ void MegamanStandingState::onUpdate()
 	hittableCalculation();
 	undyingCalculation();
 
-	/*pData->vy += acceleration; 
-    pData->y += pData->vy; */
+	/*pData->vy += acceleration;
+	pData->y += pData->vy; */
 
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::STAND) {
 		pData->setiCurrentArray(MegamanData::STANDSHOOT);
-	}
-	if (!pData->isFrire && pData->iCurrentArr == MegamanData::STANDSHOOT) {
-		pData->setiCurrentArray(MegamanData::STAND);
-	}
+		if (UIComponents::getInstance()->getSheildFlying()) {
+			pData->setiCurrentArray(MegamanData::PUNCH);
 
-	pData->ppTextureArrays[pData->iCurrentArr]->update();
-
-	if (pData->isCharging) {
-		pData->ChargingCount++;
-		pData->bulletSize = getSizeofBullet(pData->ChargingCount);
-		pData->ppTextureArrays[pData->bulletSize]->update();
-	}
-
-	if (pData->isFrire) {
-		pData->FireCountFrames++;
-		if (pData->FireCountFrames > FIRE_COUNTING_FRAME) {
-			pData->FireCountFrames = 0;
-			pData->isFrire = false;
 		}
+		if (!pData->isFrire) {
+			pData->setiCurrentArray(MegamanData::STAND);
+		}
+
+		pData->ppTextureArrays[pData->iCurrentArr]->update();
+
+		if (pData->isCharging) {
+			pData->ChargingCount++;
+			pData->bulletSize = getSizeofBullet(pData->ChargingCount);
+			pData->ppTextureArrays[pData->bulletSize]->update();
+		}
+
+		if (pData->isFrire) {
+			pData->FireCountFrames++;
+			if (pData->FireCountFrames > FIRE_COUNTING_FRAME) {
+				pData->FireCountFrames = 0;
+				pData->isFrire = false;
+			}
+		}
+
 	}
-	
 }
 
 void MegamanStandingState::onCollision(CollisionRectF cRect )
 {
 	
-	/*pData->y -= pData->vy;
-	pData->vy -= acceleration;*/
+	pData->y -= pData->vy;
+	pData->vy -= acceleration;
 
 
 }

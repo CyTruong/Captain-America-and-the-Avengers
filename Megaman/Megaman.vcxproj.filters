@@ -88,6 +88,12 @@
     <Filter Include="Bullets\BlueSoldier">
       <UniqueIdentifier>{a88a41e8-b3e9-4665-8db3-e70825e6db2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enemies\Wizard">
+      <UniqueIdentifier>{33d0e285-61ef-4b8e-b513-69f3f57e12e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\Wizard">
+      <UniqueIdentifier>{d571fb2c-48f1-469b-b1ee-4cdd292d1467}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -483,6 +489,45 @@
     <ClInclude Include="BlueSoldierBulletSprite.h">
       <Filter>Bullets\BlueSoldier</Filter>
     </ClInclude>
+    <ClInclude Include="WizardData.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardFlyingAttackState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardGroundShootingState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardRunnigState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardSprite.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardStandingState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardNormalBulletData.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardNormalBulletMovingState.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardNormalBulletSprite.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainPunchActiveState.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainPunchData.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainPunchSprite.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -742,6 +787,30 @@
     </ClCompile>
     <ClCompile Include="BlueSoldierBulletSprite.cpp">
       <Filter>Bullets\BlueSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardData.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardFlyingAttackState.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardGroundShootingState.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardRunningState.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardSprite.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardStandingState.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardNormalBulletSprite.cpp">
+      <Filter>Bullets\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="CaptainPunchSprite.cpp">
+      <Filter>Bullets\Captain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

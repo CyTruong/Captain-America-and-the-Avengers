@@ -58,7 +58,7 @@ MegamanSprite::MegamanSprite(float respawnX, float respawnY, Direction movedir)
 	this->pData->ppTextureArrays[MegamanData::WALLSLIDESHOOT]->setAnchorPoint(0.5f,0.8f);
 	this->pData->bodyRects[MegamanData::WALLSLIDESHOOT] = RectF(-11, -30, 32, 35);
 
-	this->pData->ppTextureArrays[MegamanData::PUNCH] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Punch", 3, 15);
+	this->pData->ppTextureArrays[MegamanData::PUNCH] = new TextureArray(RESOURCE_SPRITE, "Captain", "Punch", 3, 3);
 	this->pData->ppTextureArrays[MegamanData::PUNCH]->setAnchorPoint(0.5f,1);
 	this->pData->bodyRects[MegamanData::PUNCH] = RectF(-11.0f, -45, 22, 45);
 

@@ -12,6 +12,7 @@ MegamanRunningState::MegamanRunningState(MegamanData* data)
 
 	if (pData->isFrire) {
 		pData->setiCurrentArray(MegamanData::RUNSHOOT);
+
 	}
 	else
 	{
@@ -58,9 +59,12 @@ void MegamanRunningState::onUpdate()
 
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::RUN) {
 		pData->setiCurrentArray(MegamanData::RUNSHOOT);
+		if (UIComponents::getInstance()->getSheildFlying()) {
+			pData->setiCurrentArray(MegamanData::PUNCH);
+		}
 	}
 
-	if ((!pData->isFrire) && pData->iCurrentArr == MegamanData::RUNSHOOT) {
+	if ((!pData->isFrire) && (pData->iCurrentArr == MegamanData::RUNSHOOT || pData->iCurrentArr == MegamanData::PUNCH)) {
 		pData->setiCurrentArray(MegamanData::RUN);
 	}
 

@@ -44,6 +44,12 @@ void TileLayer::fromfile(int **&arr)
 	ifstream myReadFile;
 	myReadFile.open("Resource\\Map\\"+this->name+".txt");
 	
+	if (name=="BossMap1")
+	{
+		int a = 0; 
+
+	}
+
 	int row = this->nRows; 
 	int col = this->nColumns; 
 
