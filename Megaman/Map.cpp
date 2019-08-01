@@ -336,7 +336,7 @@ void Map::loadObject()
 
 	//}
 	
-	Object* enemy = new Object("SingleGun", "enemy", 600, 200, 2, 20, 20, RectF(600, 200, 20, 20));
+	Object* enemy = new Object("BlueSoldier", "enemy", 160, 320, 0, 24, 43, RectF(160, 320, 24, 43));
 	Objects.push_back(enemy);
 
 }

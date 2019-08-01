@@ -10,7 +10,7 @@ ZuliaSpecialBulletSprite::ZuliaSpecialBulletSprite(float x, float y)
 	this->pData->ppTextureArrays = new TextureArray*[ZuliaSpecialBulletData::COUNT];
 
 
-	//Sound::getInstance()->play("SingleGunFire", false, 1);
+	//Sound::getInstance()->play("BlueSoldierFire", false, 1);
 
 	this->pData->ppTextureArrays[ZuliaSpecialBulletData::FLY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "Zulia_fly", 3, 5);
 	this->pData->ppTextureArrays[ZuliaSpecialBulletData::FLY]->setAnchorPoint(0.5f, 0.5f);

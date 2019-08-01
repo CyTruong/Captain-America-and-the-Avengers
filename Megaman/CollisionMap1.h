@@ -44,13 +44,7 @@ collisionMap1::collisionMap1()
 	col.type = "ground";
 	collisionRectFs.push_back(col);*/
 
-	r.x = 10 * 16;
-	r.y =  0;
-	r.width = 16 * 2;
-	r.height = 16*30;
-	col.rect = r;
-	col.type = "wall";
-	collisionRectFs.push_back(col);
+	
 
 	// chan cuoi wall 
 	/*r.x = 8*16;

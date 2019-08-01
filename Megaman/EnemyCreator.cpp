@@ -5,7 +5,7 @@
 #include "ZuliaSprite.h"
 #include "DoubleRocketSprite.h"
 #include	"RocketFlySprite.h"
-
+#include "BlueSoldierSprite.h"
 #include"DoorSprite.h"
 
 EnemyCreator* EnemyCreator::instance = nullptr;
@@ -14,7 +14,7 @@ EnemyCreator* EnemyCreator::instance = nullptr;
 EnemyCreator::EnemyCreator()
 { 
 
-
+	addAppearDirection("BlueSoldier", Direction::createRight());
 	addAppearDirection("SingleGun", Direction::createRight());
 	addAppearDirection("Elevator", Direction::createRight());
 	addAppearDirection("DoubleRocket", Direction::createRight());
@@ -41,6 +41,9 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 {
 	if (enemyName == "SingleGun") {
 		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
+	}
+	if (enemyName == "BlueSoldier") {
+		return new BlueSoldierSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
 	if (enemyName == "DoubleRocket") {
 		return new DoubleRocketSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);

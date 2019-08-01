@@ -62,7 +62,7 @@ public:
 	void setisSheildFlying(bool is) {
 		this->isSheildFlying = is;
 	}
-	bool isSheildFlying() {
+	bool getSheildFlying() {
 		return this->isSheildFlying;
 	}
 

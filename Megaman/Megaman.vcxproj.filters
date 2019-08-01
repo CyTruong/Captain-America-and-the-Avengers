@@ -79,6 +79,15 @@
     <Filter Include="Bullets\Captain">
       <UniqueIdentifier>{db71182b-77ef-4a11-8884-0a8b58dcc39d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enemies\BlueSoldier">
+      <UniqueIdentifier>{eb79622e-3df0-48a4-93b7-10fda5163943}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemies\RocketSoldier">
+      <UniqueIdentifier>{8282726e-8a4c-4b1d-9693-55154680dba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\BlueSoldier">
+      <UniqueIdentifier>{a88a41e8-b3e9-4665-8db3-e70825e6db2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -447,6 +456,33 @@
     <ClInclude Include="Map1CamBounds.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="BlueSoldierSprite.h">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierData.h">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierRuningState.h">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierShootState.h">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierDeadState.h">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierSitState.h">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierBulletData.h">
+      <Filter>Bullets\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierBulletMovingState.h">
+      <Filter>Bullets\BlueSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueSoldierBulletSprite.h">
+      <Filter>Bullets\BlueSoldier</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -685,6 +721,27 @@
     </ClCompile>
     <ClCompile Include="Boss1Scene.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueSoldierSprite.cpp">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueSoldierData.cpp">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueSoldierRuningState.cpp">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueSoldierDeadState.cpp">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueSoldierShootState.cpp">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueSoldierSitState.cpp">
+      <Filter>Enemies\BlueSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueSoldierBulletSprite.cpp">
+      <Filter>Bullets\BlueSoldier</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

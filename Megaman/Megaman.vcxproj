@@ -140,6 +140,15 @@
   <ItemGroup>
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="base64.h" />
+    <ClInclude Include="BlueSoldierBulletData.h" />
+    <ClInclude Include="BlueSoldierBulletMovingState.h" />
+    <ClInclude Include="BlueSoldierBulletSprite.h" />
+    <ClInclude Include="BlueSoldierData.h" />
+    <ClInclude Include="BlueSoldierDeadState.h" />
+    <ClInclude Include="BlueSoldierRuningState.h" />
+    <ClInclude Include="BlueSoldierShootState.h" />
+    <ClInclude Include="BlueSoldierSprite.h" />
+    <ClInclude Include="BlueSoldierSitState.h" />
     <ClInclude Include="Boss1Scene.h" />
     <ClInclude Include="BulletSprite.h" />
     <ClInclude Include="BulletState.h" />
@@ -263,6 +272,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base64.cpp" />
+    <ClCompile Include="BlueSoldierBulletSprite.cpp" />
+    <ClCompile Include="BlueSoldierData.cpp" />
+    <ClCompile Include="BlueSoldierDeadState.cpp" />
+    <ClCompile Include="BlueSoldierRuningState.cpp" />
+    <ClCompile Include="BlueSoldierShootState.cpp" />
+    <ClCompile Include="BlueSoldierSprite.cpp" />
+    <ClCompile Include="BlueSoldierSitState.cpp" />
     <ClCompile Include="Boss1Scene.cpp" />
     <ClCompile Include="CaptainKickSprite.cpp" />
     <ClCompile Include="CaptainSheildSprite.cpp" />

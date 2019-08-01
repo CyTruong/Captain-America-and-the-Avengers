@@ -7,6 +7,7 @@ SingleGunNormalBulletSprite::SingleGunNormalBulletSprite( float x, float y,  flo
 {
 	this->pData = new SingelGunNormalBulletData();
 	BulletSprite::pData = pData;
+
 	this->pData->isDesTroyed = false;
 	this->pData->ppTextureArrays = new TextureArray*[MgmNormalBulletData::COUNT];
 	
