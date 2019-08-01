@@ -1,4 +1,5 @@
-	#pragma once
+#pragma once
+#pragma once
 #include "Scene.h"
 #include "Camera.h"
 #include"Viewport.h"
@@ -10,15 +11,15 @@
 #include "BackGround.h"
 #include "HPBarSprite.h"
 
-class Scene1 : public Scene
+class Boss1Scene: public Scene
 {
 private:
 	void loadSound();
 
-public: 
+public:
 
-	Scene1();
-	virtual ~Scene1();
+	Boss1Scene();
+	virtual ~Boss1Scene();
 
 	virtual void onCollision();
 	virtual void handlerInput();
@@ -36,7 +37,7 @@ private:
 	HPBarSprite* hpHub;
 	HPBarSprite* hpHubBoss;
 
-	
+
 	//->texture **hp 
 	//Texture** lifeTexture;
 	int nTransitionFrames;
@@ -46,6 +47,6 @@ private:
 	bool isFinish;
 	bool isPause;
 	int nPlayers;
-// shader lightign 
+	// shader lightign 
 };
 

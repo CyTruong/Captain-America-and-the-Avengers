@@ -39,8 +39,8 @@ void MegamanStandingState::onUpdate()
 	hittableCalculation();
 	undyingCalculation();
 
-	pData->vy += acceleration; 
-    pData->y += pData->vy; 
+	/*pData->vy += acceleration; 
+    pData->y += pData->vy; */
 
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::STAND) {
 		pData->setiCurrentArray(MegamanData::STANDSHOOT);
@@ -70,8 +70,10 @@ void MegamanStandingState::onUpdate()
 void MegamanStandingState::onCollision(CollisionRectF cRect )
 {
 	
-	pData->y -= pData->vy;
-	pData->vy -= acceleration;
+	/*pData->y -= pData->vy;
+	pData->vy -= acceleration;*/
+
+
 }
 
 void MegamanStandingState::onDynamicObjectCollision(CollisionRectF * rect)

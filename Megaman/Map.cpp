@@ -2,7 +2,7 @@
 #include <algorithm> 
 #include <typeinfo>
 #include "CollisionMap1.h"
-
+#include "CollisionBossMap1.h"
 
 Map::Map(std::string mapName)
 	:
@@ -13,10 +13,21 @@ Map::Map(std::string mapName)
 	//change de xml 
 
 	// load tile set
-	this->width = NUMBER_COLUMM_MAP1;
-	this->height = NUMBER_ROW_MAP1;
 	this->tileSize = TILE_SIZE;
-	loadTileSet();
+
+	if (mapName=="Map1")
+	{
+		this->width = NUMBER_COLUMM_MAP1;
+		this->height = NUMBER_ROW_MAP1;
+	}
+	else if (mapName=="BossMap1")
+	{
+		this->width = NUMBER_COLUMM_BOSSMAP1;
+		this->height = NUMBER_ROW_BOSSMAP1;
+	}
+	
+	
+	loadTileSet( mapName);
 
 	// load from file txt 
 
@@ -31,7 +42,7 @@ Map::Map(std::string mapName)
 	//	}
 	//}
 
-	loadLayer();
+	loadLayer(mapName);
 	// create tileTmx in BackGroundLayer
 	for (int i = 0; i < layers.size(); i++)
 	{
@@ -47,8 +58,21 @@ Map::Map(std::string mapName)
 	//		
 	//	}
 	//}
-	collisionMap1 colRect;
-	vector<CollisionRectF> colRectF = colRect.getColRectF();
+	vector<CollisionRectF> colRectF; 
+
+	if (mapName=="Map1")
+	{
+		collisionMap1 colRect;
+	
+		colRectF= colRect.getColRectF();
+	}
+	else
+	{
+		collisionBossMap1 colRect;
+
+		colRectF = colRect.getColRectF();
+	}
+	
 
 
 	loadCollisionRect(colRectF);
@@ -123,40 +147,28 @@ Map::~Map()
 #pragma region 
 
 
-void Map::loadTileSet()
+void Map::loadTileSet(string mapname)
 {
+	std::string s = std::string("Resource\\Map\\"+mapname+"Tileset.png");
+
 	TileSet* tileSet;
 	tileSet = new TileSet();
-	std::string s = std::string("Resource\\Map\\captainAmerica.png");
-
 	std::wstring tileSetSource(s.begin(), s.end());
 
 	//tileSet->name = e->Attribute("name");
-	tileSet->name = "captainAmerica";
+	tileSet->name = mapname+"Tileset";
 
 	//Graphics::getInstance()->loadTexture(s, e->Attribute("name"));
 	Graphics::getInstance()->loadTexture(s, tileSet->name);
 	tileSet->pTexture = Graphics::getInstance()->getTexture(tileSet->name)->pTexture;
 
-	/*e->FirstChildElement()->Attribute("width", &tileSet->width);
-	e->FirstChildElement()->Attribute("height", &tileSet->height);
-	e->Attribute("firstgid", &tileSet->firstGridID);
-	e->Attribute("tilewidth", &tileSet->tileWidth);
-	e->Attribute("tileheight", &tileSet->tileHeight);
-	e->Attribute("spacing", &tileSet->spacing);
-	e->Attribute("margin", &tileSet->margin);*/
-	tileSet->width = 128 * 16;
-	tileSet->height = 30 * 16;
+	tileSet->width = TILE_SIZE*128; 
+	tileSet->height = 16*30;
 	tileSet->firstGridID = 0;
-	tileSet->tileWidth = 16;
-	tileSet->tileHeight = 16;
+	tileSet->tileWidth = TILE_SIZE;
+	tileSet->tileHeight = TILE_SIZE;
 	tileSet->spacing = 0;
 	tileSet->margin = 0;
-
-
-
-
-
 
 
 	int nCol = tileSet->width / (tileSet->tileWidth + tileSet->spacing);
@@ -185,21 +197,19 @@ void Map::loadTileSet()
 
 	tileSets.push_back(tileSet);
 
-
-
 }
 
-void Map::loadLayer()
+void Map::loadLayer(string mapname)
 {
 
-	mapArr = new int*[30]; 	// w, h 128 ,30 
-	TileLayer* pTileLayer = new TileLayer(tileSize, width, height, "captainAmerica", tileSets);
-	std::vector<std::vector<int>>  data(30, vector<int>(128, 0));
+	mapArr = new int*[height]; 	// w, h 128 ,30 
+	TileLayer* pTileLayer = new TileLayer(tileSize, width, height, mapName, tileSets);
+	std::vector<std::vector<int>>  data(height, vector<int>(width, 0));
 	pTileLayer->fromfile(mapArr);
 
-	for (int j = 0; j < 30; j++)
+	for (int j = 0; j < height; j++)
 	{
-		for (int i = 0; i < 128; i++)
+		for (int i = 0; i < width; i++)
 		{
 			data[j][i] = mapArr[j][i];
 
@@ -288,6 +298,7 @@ void Map::loadObject()
 	int height;
 	std::string name;
 	std::string type;
+
 	//for (TiXmlElement* e = pElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	//{
 	//	name = e->Attribute("name");
@@ -324,7 +335,9 @@ void Map::loadObject()
 	//	}
 
 	//}
-
+	
+	Object* enemy = new Object("SingleGun", "enemy", 600, 200, 2, 20, 20, RectF(600, 200, 20, 20));
+	Objects.push_back(enemy);
 
 }
 
@@ -449,6 +462,7 @@ void Map::addEToMap(Camera* cam)
 {
 	
 	//mapCollisionTree->clear();
+	//Thêm obj collision vào list có thể va chạm 
 	mapCollisionGrid->clear();
 	for (int i = 0; i < Objects.size(); i++)
 	{
@@ -456,11 +470,14 @@ void Map::addEToMap(Camera* cam)
 		if (EnemyMap.find(Objects[i]->id) == EnemyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
 			mapCollisionGrid->insert(Objects[i]);
 	}
+
+	//Lấy danh sách các object trong cam
 	std::vector < Object * > returnList;
 
 	RectF camRect = cam->getRect();
 	mapCollisionGrid->getObjectlist(returnList, camRect);
 
+	//Với mỗi obj trong map , thêm vào obj map hay enemy map
 	for (int i = 0; i < returnList.size(); i++)
 	{
 		RectF body = returnList[i]->body;
@@ -468,7 +485,7 @@ void Map::addEToMap(Camera* cam)
 		if (camRect.checkCollision(body))
 		{
 			Direction appearDir = EnemyCreator::getInstance()->getAppearDir(returnList[i]->name);
-			if (1)
+			if (EnemyMap.find(returnList[i]->id) == EnemyMap.end() && objectMap.find(returnList[i]->id) == objectMap.end())
 			{
 				if (type == "enemy")
 				{
@@ -1007,8 +1024,8 @@ void Map::onUpdate(Camera* cam)
 
 
 
-	/*cleanMap(cam);
-	addEToMap(cam);*/
+	//cleanMap(cam);
+	addEToMap(cam);
 
 
 

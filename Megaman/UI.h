@@ -59,6 +59,13 @@ public:
 	bool isTargeting() {
 		return this->isTargetting;
 	}
+	void setisSheildFlying(bool is) {
+		this->isSheildFlying = is;
+	}
+	bool isSheildFlying() {
+		return this->isSheildFlying;
+	}
+
 private:
 	static UIComponents* instance;
 	UIComponents();
@@ -70,7 +77,7 @@ private:
 	bool isTargetting;
 	// boss hp 
 	int Shurikanhp; 
-
+	bool isSheildFlying;
 
 	char configKeyBoard[COUNT];
 	char defaultKeyBoard[COUNT];

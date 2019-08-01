@@ -127,9 +127,9 @@ void MegamanRunningState::onCollision(CollisionRectF crect)
 //	LogWriter::getInstance()->write("Ruuning state collision");
 	//pData->cThroughRect.push_back(crect);
 	if (pData->vx > 0)
-	{
+	{   //  == wall 
 		if (crect.type!="ground") {
-			pData->x -= pData->getBody().x + pData->getBody().width - crect.rect.x;
+			pData->x -= (pData->x + pData->getBody().width - crect.rect.x);
 
 		}
 		pData->vx = 0;
@@ -137,9 +137,11 @@ void MegamanRunningState::onCollision(CollisionRectF crect)
 		pData->vy -= acceleration;
 	}
 	else
-	{
+	{  //  == wall 
 		if (crect.type != "ground") {
-			pData->x += crect.rect.x + crect.rect.width - pData->getBody().x;
+			int a = (crect.rect.x + crect.rect.width - pData->getBody().x); 
+
+			pData->x =pData->x+a;
 
 		}
 		pData->vx = 0;

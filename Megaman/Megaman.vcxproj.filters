@@ -435,6 +435,18 @@
     <ClInclude Include="CollisionMap1.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Boss1Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionBossMap1.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CamBound.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Map1CamBounds.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -670,6 +682,9 @@
     </ClCompile>
     <ClCompile Include="CaptainKickSprite.cpp">
       <Filter>Bullets\Captain</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss1Scene.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

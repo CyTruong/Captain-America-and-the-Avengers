@@ -2,42 +2,24 @@
 #include "Scene1.h"
 #include "Sound.h"
 #include "define.h"
-
-void Scene1::loadSound()
+#include "Boss1Scene.h"
+void Boss1Scene::loadSound()
 {
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalMFire.wav","MgmBulletNormalMFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalSFire.wav","MgmBulletNormalSFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmBulletNormalLFire.wav", "MgmBulletNormalLFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmWallJump.wav", "MgmBulletNormalLFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmTakeDameged.wav", "MgmTakeDameged");
-	Sound::getInstance()->loadSound("Resource\\Sound\\MgmCharge.wav", "MgmCharge");
-	Sound::getInstance()->loadSound("Resource\\Sound\\SingleGunFire.wav", "SingleGunFire");
-	Sound::getInstance()->loadSound("Resource\\Sound\\stage1.wav", "BlastHornet");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Bullet_Destroy.wav", "BulletDestroy");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Bullet_Destroy2.wav", "BulletDestroy2");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Dash.wav", "Dash");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Jump.wav", "Jump");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Elevator.wav", "Elevator");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Enemy_Destroy.wav", "Enemy_Destroy");
-	Sound::getInstance()->loadSound("Resource\\Sound\\Death.wav", "Death");
 
-
-	
-	
 }
 
-Scene1::Scene1()
-{
-	std::string mapName = "Map1";
+Boss1Scene::Boss1Scene()
+{     
+	std::string mapName = "Boss1Map";
 
 	pMap = new Map(mapName);
 
 	// if mapname ; 
 
-	int numberColumOfMap = NUMBER_COLUMM_MAP1;
-	int numberRowOfMap = NUMBER_ROW_MAP1; 
-	int startPointX = START_MAP1_POINT_X; 
-	int startPointY = START_MAP1_POINT_Y; 
+	int numberColumOfMap = NUMBER_COLUMM_BOSSMAP1;
+	int numberRowOfMap = NUMBER_ROW_BOSSMAP1;
+	int startPointX = START_BOSSMAP1_POINT_X;
+	int startPointY = START_BOSSMAP1_POINT_Y;
 
 
 
@@ -47,13 +29,13 @@ Scene1::Scene1()
 	viewPortSize = VIEWPORT_SIZE;
 	viewPort = new ViewPort(RectI(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
 
-	Cambounds camBounds; 
+
+	//cam = new Camera(viewPort, startPointX, startPointY, RectF(0, 0, TILE_SIZE * 16, TILE_SIZE * 16), RectF(0, 0, numberColumOfMap * TILE_SIZE, numberRowOfMap * TILE_SIZE));
+	Cambounds camBounds;
 
 	cam = new Camera(viewPort, startPointX, startPointY, RectF(0, 0, TILE_SIZE * 16, TILE_SIZE * 16), RectF(0, 0, numberColumOfMap * TILE_SIZE, numberRowOfMap * TILE_SIZE), camBounds.getCamBounds(), 2);
 
-
-
-	pMegaman = new MegamanSprite(TILE_SIZE * 3, TILE_SIZE*14 , cam->getMoveDir());
+	pMegaman = new MegamanSprite(TILE_SIZE * 2, TILE_SIZE * 8, cam->getMoveDir());
 	//pMegaman = new MegamanSprite(7500, 1800, cam->getMoveDir());
    //pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
    //pMegaman = new MegamanSprite(120, 120+16*48, cam->getMoveDir());
@@ -77,7 +59,7 @@ Scene1::Scene1()
 	//Sound::getInstance()->play("BlastHornet", true, 1);
 }
 
-Scene1 ::~Scene1()
+Boss1Scene ::~Boss1Scene()
 {
 	delete pMegaman;
 	pMegaman = NULL;
@@ -93,14 +75,14 @@ Scene1 ::~Scene1()
 
 }
 
-void Scene1::onCollision()
+void Boss1Scene::onCollision()
 {
 
 	pMap->onCollisionvsPlayer(pMegaman, cam);
 	pMap->onCollision(cam);
 }
 
-void Scene1::handlerInput()
+void Boss1Scene::handlerInput()
 {
 	while (!KeyBoard::GetInstance()->isEmpty())
 	{
@@ -184,7 +166,7 @@ void Scene1::handlerInput()
 			else if (keyCode == UIComponents::getInstance()->getKey(UIComponents::SLIDE)) {
 				if (e.isPressed())
 				{
-					Sound::getInstance()->play("Dash",false,1);
+					Sound::getInstance()->play("Dash", false, 1);
 					pMegaman->getState()->onSlidePressed();
 				}
 			}
@@ -194,7 +176,7 @@ void Scene1::handlerInput()
 	KeyBoard::GetInstance()->Clean();
 
 }
-void Scene1::onUpdate()
+void Boss1Scene::onUpdate()
 {
 	//	if (isGameOver)
 	//	{
@@ -224,7 +206,7 @@ void Scene1::onUpdate()
 	//		}
 	//	}
 
-	this->handlerInput(); 
+	this->handlerInput();
 
 	// not nessc 
 
@@ -247,7 +229,7 @@ void Scene1::onUpdate()
 
 
 }
-void Scene1::render()
+void Boss1Scene::render()
 {
 
 	Graphics::getInstance()->beginRender();
@@ -261,11 +243,11 @@ void Scene1::render()
 
 	pMap->drawEnemy(cam);
 
-	
+
 
 	pMap->drawObj(cam);
 	//draw HP col 
-	
+
 	hpHub->draw(cam);
 
 	Graphics::getInstance()->getSpriteHandler()->End();
@@ -274,7 +256,7 @@ void Scene1::render()
 
 }
 
-void Scene1::Update()
+void Boss1Scene::Update()
 {
 
 	//update vị trí của ng chơi cho enemy
@@ -299,33 +281,35 @@ void Scene1::Update()
 
 
 	// add stoppoint 0 1 2 
-	int isCamStop = 0; 
-	
-	if (UIComponents::getInstance()->getShurikanHp()!=0 )
-	{ 
+	int isCamStop = 0;
+
+	if (UIComponents::getInstance()->getShurikanHp() != 0)
+	{
 		isCamStop = 1;
 
 	}
 	else
 	{    // const is range of boss1 room 
 
-		if (pMegaman->getX()>2320&& pMegaman->getX()<2544)
+		if (pMegaman->getX() > 2320 && pMegaman->getX() < 2544)
 		{
-			isCamStop = 1; 
+			isCamStop = 1;
 
 
 		}
 	}
-  
+
 	// truyen vao not tiep theo 
 	int Mx = pMegaman->getX();
 	int My = pMegaman->getY();
-	int i = -1; 
+	int i = -1;
 
 	// kiem tra loai map ma cam di chuyen onlyngang ,doc , ngangdoc , boss 
 
 
-	cam->update(pMegaman->getX() , pMegaman->getY(), pMegaman->getMoveDir(), isCamStop, i);
+	
+
+	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir(), isCamStop, i);
 
 
 	//update megaman theo cái cam

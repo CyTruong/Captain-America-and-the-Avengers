@@ -1,0 +1,19 @@
+- ch?nh s?a camara : 
++ chuy?n thành tham s? và các h?ng trog define 
+- xem cái grid , quad 
+
+- ch?nh l?i va ch?m :* 
+
++ làm sao lôi va ch?m ra xét 
++ di chuy?n b? l?i r?t kh?i cam 
+
+- control :làm cho thay d?i phím ez 
+
+- load enemy ,boss : 
+
+- change scene 
+ + hi?u ?ng = cam di t? t? qa 
+ + thay các scene = scene manager 
+ 
+- t?o git rõ ràng 
++t?o backup 

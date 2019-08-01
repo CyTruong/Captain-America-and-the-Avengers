@@ -42,12 +42,25 @@ TileTmx* TileLayer::getTileTmx(int ix, int iy)
 void TileLayer::fromfile(int **&arr)
 {
 	ifstream myReadFile;
-	myReadFile.open("Resource\\Map\\captainAmerica.txt");
+	myReadFile.open("Resource\\Map\\"+this->name+".txt");
+	
+	int row = this->nRows; 
+	int col = this->nColumns; 
 
 
+	int** arr2 = new int*[row];
+	for (int j = 0; j < row; j++)
+	{
+		arr2[j] = new int[col];
 
-	int arr2[30][128];
+		for (int i = 0; i < col; i++)
+		{
+			arr2[j][i] = 0;
 
+		}
+
+
+	}
 	string s1; //store a line of file
 	for (istreambuf_iterator<char, char_traits<char> > it(myReadFile.rdbuf());
 		it != istreambuf_iterator<char, char_traits<char> >(); it++) {
@@ -58,12 +71,8 @@ void TileLayer::fromfile(int **&arr)
 	string s2 = "";
 	int k = 0;
 	int count = 0;
-	for (int j = 0; j < 30; j++)
+	for (int j = 0; j < row; j++)
 	{
-		if (j == 1)
-		{
-			int a = 1;
-		}
 
 		for (int i = 0; ; i++)
 		{
@@ -71,15 +80,10 @@ void TileLayer::fromfile(int **&arr)
 			{
 				k += (i + 1);
 				count = 0;
-
-				if (i == 15)
-				{
-					int a = 1;
-				}
 				break;
 
 			}
-			if (s1[k + i] != ' ')
+			if (s1[k + i] != ' '&&s1[k + i] != '\0')
 			{
 
 				s2 += s1[k + i];
@@ -89,15 +93,8 @@ void TileLayer::fromfile(int **&arr)
 			else
 			{
 				int n = std::stoi(s2);
-
-				int *a = &n;
-
 				//n enter  maparr 
 				arr2[j][count++] = n;
-
-
-
-
 				s2 = "";
 
 			}
@@ -107,12 +104,12 @@ void TileLayer::fromfile(int **&arr)
 
 	}
 
-	arr = new int*[30];
-	for (int j = 0; j < 30; j++)
+	arr = new int*[row];
+	for (int j = 0; j < row; j++)
 	{
-		arr[j] = new int[128];
+		arr[j] = new int[col];
 
-		for (int i = 0; i < 128; i++)
+		for (int i = 0; i < col; i++)
 		{
 			arr[j][i] = arr2[j][i];
 
@@ -144,28 +141,25 @@ void TileLayer::fromfile(int **&arr)
 
 void TileLayer::draw(Camera* cam)
 {
-	for (int row = 0; row < 30; row++)
+	for (int row = getTileYTop(cam->getY()); row<= getTileYBottom(cam->getY() + (float)cam->getHeight());row++)
 	{
 		for (int col = getTileXLeft(cam->getX()); col <= getTileXRight(cam->getX() + (float)cam->getWidth()); col++)
 		{
 			//int index = col + row * nColumns;
+			if (row==29)
+			{
+				int a =1; 
+			}
 			int index = this->arrmapInLayer[row][col];
 			//	if( ppTileTmx[ index ] ->getID() == 0)
 			//		continue;
-			if (row == 9 && col == 4)
-			{
-				int a = 0;
-
-			}
-			TileSet* tileSet = tileSets[getTileSet(ppTileTmx[col + row * 128]->getID())];
+	
+			TileSet* tileSet = tileSets[getTileSet(ppTileTmx[col + row * this->nColumns]->getID())];
 
 
-			int tileID = ppTileTmx[col + row * 128]->getID() - tileSet->firstGridID; // ex : 128th represent by 127 in the 1D array
+			int tileID = ppTileTmx[col + row * this->nColumns]->getID() - tileSet->firstGridID; // ex : 128th represent by 127 in the 1D array
 			int tileIDinSet = tileID;
-			if (tileID == 128 * 28 + 1)
-			{
-				int a = 1;
-			}
+	
 			//tileID = tileSet -> getCurrentID(tileID);
 			if (tileID != -1)
 
@@ -175,11 +169,11 @@ void TileLayer::draw(Camera* cam)
 			/*TileSet* tileSet = tileSets[0];
 			int tileIDinSet =index;*/
 
-			int colInSet = tileIDinSet % 16;
-			int rowInSet = tileIDinSet / 16;
+			int colInSet = tileIDinSet % nColumnsOfTileset;
+			int rowInSet = tileIDinSet / nColumnsOfTileset;
 			int dx = tileSet->margin + (colInSet) * (tileSet->spacing + tileSet->tileWidth);
 			int dy = tileSet->margin + (rowInSet) * (tileSet->spacing + tileSet->tileHeight);
-			ppTileTmx[col + row * 128]->draw(tileSet->pTexture, 16, 16, dx, dy, cam);
+			ppTileTmx[col + row * this->nColumns]->draw(tileSet->pTexture, 16, 16, dx, dy, cam);
 		}
 
 	}
@@ -230,8 +224,8 @@ void TileLayer::setTileIDs(std::vector< std::vector< int> > tileIDs)
 }
 void TileLayer::createTileTmx()
 {
-	nColumns = 128;
-	nRows = 30;
+	nColumns =this->nColumns;
+	nRows = this->nRows;
 
 	ppTileTmx = new TileTmx*[nColumns * nRows];
 
@@ -245,7 +239,7 @@ void TileLayer::createTileTmx()
 
 			}
 			int id = tileIDs[row][col];
-			ppTileTmx[col + row * nColumns] = new TileTmx(col * 16, row * 16, id);
+			ppTileTmx[col + row * nColumns] = new TileTmx(col * TILE_SIZE, row * TILE_SIZE, id);
 		}
 	}
 }

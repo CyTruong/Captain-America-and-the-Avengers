@@ -41,7 +41,7 @@ public:
 	}
 	RectF getMapRect()
 	{ // hcmt lay chieu rong cua hinh chu nhat 
-	return RectF(0.0f, 0.0f,15*16,15*16);
+	return RectF(0.0f, 0.0f,16*16,16*16);
 
 	  //	return RectF(0.0f, 0.0f, width * tileSize, height * tileSize);
 	}
@@ -73,8 +73,8 @@ private:
 	int **mapArr;
 
 private:
-	void loadTileSet();
-	void loadLayer();
+	void loadTileSet(string mapname);
+	void loadLayer(string mapname);
 	void loadCollisionRect(vector<CollisionRectF> colRectF);
 	void createMapGridTree();
 	void createMapCollsionTree();
