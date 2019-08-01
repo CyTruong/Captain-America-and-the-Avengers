@@ -3,7 +3,9 @@
 #include "SpriteState.h"
 #include "MegamanData.h"
 #include "CaptainKickSprite.h"
+#include "CaptainPunchSprite.h"
 #include "CaptainSheildSprite.h"
+#include "UI.h"
 //#include "Sound.h"
 
 class MegamanState : public SpriteState
@@ -44,6 +46,13 @@ public:
 			speed *= (pData->isRapid) ? 1.25 : 1;
 		//	pData->Bullets.push_back(new MgmNormalBulletSprite(this->pData->bulletSize, x, y, speed, angle));
 		//	pData->Bullets.push_back(new CaptainSheildSprite(this->pData->bulletSize, x, y, speed, angle));
+			if (UIComponents::getInstance()->getisSheildFlying()) {
+				LogWriter::getInstance()->write("Captain punchhhhh");
+				speed = 4;
+				speed *= (pData->isRapid) ? 1.25 : 1;
+				pData->Bullets.push_back(new CaptainPunchSprite(this->pData->bulletSize, x, y, speed, angle));
+				return;
+			}
 			if (pData->dir.isRight())
 			{
 				pData->Bullets.at(0)->Trigger(1);
@@ -64,7 +73,7 @@ public:
 		}
 		case BulletTypes::PUNCH:
 		{
-			return;
+		
 		}
 		}
 		//thêm các loại đạn ở đây

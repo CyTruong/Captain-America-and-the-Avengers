@@ -37,8 +37,6 @@ public:
 		int posYH = (collisionRe.rect.y + collisionRe.rect.height) / nodeHeight;
 		for (int i = PosY; i <= posYH; i++) {
 			for (int j = PosX; j <= posXW; j++) {
-				LogWriter::getInstance()->write("add rect ",collisionRe.rect.x,collisionRe.rect.y);
-				LogWriter::getInstance()->write("		at ", i,j);
 				Nodes[i][j].arrCollisionRecF.push_back(collisionRe);
 			}
 		}
@@ -50,8 +48,6 @@ public:
 		int posYH = (obj->body.y + obj->body.height) / nodeHeight;
 		for (int i = PosY; i <= posYH; i++) {
 			for (int j = PosX; j <= posXW; j++) {
-				LogWriter::getInstance()->write("add enemy "+obj->type+" ", obj->body.x, obj->body.y);
-				LogWriter::getInstance()->write("		at ", i, j);
 				Nodes[i][j].arrObj.push_back(obj);
 			}
 		}
@@ -73,7 +69,6 @@ public:
 				}
 			}
 		}
-		LogWriter::getInstance()->write("Lấy obj 1 done ,size", returnList.size(),-111);
 
 	}
 
@@ -88,16 +83,11 @@ public:
 			for (int j = posX; j <= posX2; j++) {
 				for (int k = 0; k < Nodes[i][j].arrCollisionRecF.size(); k++) {
 					if (Nodes[i][j].arrCollisionRecF[k].rect.checkCollision(camRect)) {
-						if (returnList.size() >100) {
-							int asd = 0;
-						}
-						returnList.push_back(Nodes[i][j].arrCollisionRecF[k]);
+							returnList.push_back(Nodes[i][j].arrCollisionRecF[k]);
 					}
 				}
 			}
 		}
-		LogWriter::getInstance()->write("get objs of obj at",object.x , object.y);
-		LogWriter::getInstance()->write("Lấy obj 2 done ,size", returnList.size(), -222);
 
 	}
 

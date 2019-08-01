@@ -21,6 +21,7 @@ UIComponents::UIComponents()
 	currentStage = 1;
 	Shurikanhp = 0; 
 	this->isTargetting = false;
+	this->isSheildFlying = false;
 	//this->EnemyMap = nullptr;
 	//boss2HP  here 
 

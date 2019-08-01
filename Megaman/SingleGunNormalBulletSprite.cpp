@@ -29,7 +29,7 @@ SingleGunNormalBulletSprite::SingleGunNormalBulletSprite( float x, float y,  flo
 	this->pData->x = x;
 	this->pData->y = y;
 
-	this->pData->pState = new SingleGunNormalBulleMovingState(this->pData, 7, angle);
+	this->pData->pState = new SingleGunNormalBulleMovingState(this->pData, 9, angle);
 }
 
 void SingleGunNormalBulletSprite::draw(Camera * cam)

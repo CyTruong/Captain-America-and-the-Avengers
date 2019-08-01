@@ -44,8 +44,11 @@ void MegamanStandingState::onUpdate()
 
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::STAND) {
 		pData->setiCurrentArray(MegamanData::STANDSHOOT);
+		if (UIComponents::getInstance()->getisSheildFlying()) {
+			pData->setiCurrentArray(MegamanData::PUNCH);
+		}
 	}
-	if (!pData->isFrire && pData->iCurrentArr == MegamanData::STANDSHOOT) {
+	if (!pData->isFrire ) {
 		pData->setiCurrentArray(MegamanData::STAND);
 	}
 

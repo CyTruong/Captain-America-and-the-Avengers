@@ -79,6 +79,12 @@
     <Filter Include="Bullets\Captain">
       <UniqueIdentifier>{db71182b-77ef-4a11-8884-0a8b58dcc39d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Enemies\Wizard">
+      <UniqueIdentifier>{811b1816-9f0d-409d-8d8d-2624c8fd1831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullets\Wizard">
+      <UniqueIdentifier>{f8cdf1e1-7eac-4c23-b52f-e9e796f2d09a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KeyBoard.h">
@@ -435,6 +441,42 @@
     <ClInclude Include="CollisionMap1.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CaptainPunchActiveState.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainPunchSprite.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptainPunchData.h">
+      <Filter>Bullets\Captain</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardData.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardSprite.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardStandingState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardRunnigState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardGroundShootingState.h">
+      <Filter>Enemies\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardNormalBulletSprite.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardNormalBulletData.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardNormalBulletMovingState.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -670,6 +712,27 @@
     </ClCompile>
     <ClCompile Include="CaptainKickSprite.cpp">
       <Filter>Bullets\Captain</Filter>
+    </ClCompile>
+    <ClCompile Include="CaptainPunchSprite.cpp">
+      <Filter>Bullets\Captain</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardData.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardSprite.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardStandingState.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardRunningState.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardGroundShootingState.cpp">
+      <Filter>Enemies\Wizard</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardNormalBulletSprite.cpp">
+      <Filter>Bullets\Wizard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

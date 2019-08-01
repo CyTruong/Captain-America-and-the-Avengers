@@ -59,10 +59,11 @@ public:
 	bool isTargeting() {
 		return this->isTargetting;
 	}
+
 	void setisSheildFlying(bool is) {
 		this->isSheildFlying = is;
 	}
-	bool isSheildFlying() {
+	bool getisSheildFlying() {
 		return this->isSheildFlying;
 	}
 

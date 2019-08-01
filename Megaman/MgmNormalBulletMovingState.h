@@ -18,16 +18,18 @@ public:
 
 	virtual void onUpdate() override
 	{
-		/*if (this->pData->iCurrentArr == MgmNormalBulletData::DESTROY && this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture()) {
-			this->pData->isDesTroyed = true;
-		}*/
-
 		pData->ppTextureArrays[pData->iCurrentArr]->update();
+		if (this->pData->iCurrentArr == MgmNormalBulletData::DESTROY && this->pData->ppTextureArrays[this->pData->iCurrentArr]->isLastTexture()) {
+			this->pData->isDesTroyed = true;
+		}
+		else
+		{
+			pData->ppTextureArrays[pData->iCurrentArr]->update();
 
-		pData->x += pData->vx;
+			pData->x += pData->vx;
 
-		pData->y += pData->vy;
-
+			pData->y += pData->vy;
+		}
 	}
 
 	void onCollision(CollisionRectF rect) override
