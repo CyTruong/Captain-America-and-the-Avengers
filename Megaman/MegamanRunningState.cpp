@@ -150,7 +150,6 @@ void MegamanRunningState::onCollision(CollisionRectF crect)
 		pData->vy -= acceleration;
 	}
 
-
 }
 
 void MegamanRunningState::onDynamicObjectCollision(CollisionRectF * crect)

@@ -137,6 +137,13 @@
   <ItemGroup>
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="base64.h" />
+    <ClInclude Include="RocketSoldierDeadState.h" />
+    <ClInclude Include="RocketSoldierNormalRocketData.h" />
+    <ClInclude Include="RocketSoldierNormalRocketMovingState.h" />
+    <ClInclude Include="RocketSoldierNormalRocketSprite.h" />
+    <ClInclude Include="RocketSoldierRunningState.h" />
+    <ClInclude Include="RocketSoldierShootState.h" />
+    <ClInclude Include="RocketSoldierSprite.h" />
     <ClInclude Include="BulletSprite.h" />
     <ClInclude Include="BulletState.h" />
     <ClInclude Include="Camera.h" />
@@ -205,6 +212,7 @@
     <ClInclude Include="RocketFlyDeadState.h" />
     <ClInclude Include="RocketFlySprite.h" />
     <ClInclude Include="RocketFlyState.h" />
+    <ClInclude Include="RocketSoldierData.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="SceneManager.h" />
@@ -238,6 +246,10 @@
     <ClInclude Include="UI.h" />
     <ClInclude Include="Viewport.h" />
     <ClInclude Include="WizardData.h" />
+    <ClInclude Include="WizardDropdownBulletData.h" />
+    <ClInclude Include="WizardDropdownBulletMovingState.h" />
+    <ClInclude Include="WizardDropdownBulletSprite.h" />
+    <ClInclude Include="WizardFlyingAttackState.h" />
     <ClInclude Include="WizardGroundShootingState.h" />
     <ClInclude Include="WizardNormalBulletData.h" />
     <ClInclude Include="WizardNormalBulletMovingState.h" />
@@ -307,6 +319,12 @@
     <ClCompile Include="RocketFlyDeadState.cpp" />
     <ClCompile Include="RocketFlySprite.cpp" />
     <ClCompile Include="RocketFlyState.cpp" />
+    <ClCompile Include="RocketSoldierData.cpp" />
+    <ClCompile Include="RocketSoldierDeadState.cpp" />
+    <ClCompile Include="RocketSoldierNormalRocketSprite.cpp" />
+    <ClCompile Include="RocketSoldierRunningState.cpp" />
+    <ClCompile Include="RocketSoldierShootState.cpp" />
+    <ClCompile Include="RocketSoldierSprite.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ShurikanBounceAttackState.cpp" />
@@ -336,6 +354,8 @@
     <ClCompile Include="Viewport.cpp" />
     <ClCompile Include="winmain.cpp" />
     <ClCompile Include="WizardData.cpp" />
+    <ClCompile Include="WizardDropdownBulletSprite.cpp" />
+    <ClCompile Include="WizardFlyingAttackState.cpp" />
     <ClCompile Include="WizardGroundShootingState.cpp" />
     <ClCompile Include="WizardNormalBulletSprite.cpp" />
     <ClCompile Include="WizardRunningState.cpp" />

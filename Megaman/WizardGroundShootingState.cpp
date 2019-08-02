@@ -1,6 +1,8 @@
 #include "WizardGroundShootingState.h"
 #include "WizardNormalBulletSprite.h"
 #include "WizardStandingState.h"
+#include "WizardFlyingAttackState.h"
+
 WizardGroundShootingState::WizardGroundShootingState(EnemyData *pData)
 {
 
@@ -30,7 +32,7 @@ void WizardGroundShootingState::onUpdate()
 	else
 		this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	if (bulletcount >3) {
-		transition(new WizardStandingState(this->pData));
+		transition(new WizardFlyingAttackState(this->pData,RectF(20,40,400,380)));
 	}
 }
 
