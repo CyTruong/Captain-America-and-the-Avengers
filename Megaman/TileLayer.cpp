@@ -98,6 +98,11 @@ void TileLayer::fromfile(int **&arr)
 			}
 			else
 			{
+				if (j==29)
+				{
+					int a = 2; 
+
+				}
 				int n = std::stoi(s2);
 				//n enter  maparr 
 				arr2[j][count++] = n;

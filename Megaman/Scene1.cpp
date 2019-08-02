@@ -53,7 +53,7 @@ Scene1::Scene1()
 
 
 
-	pMegaman = new MegamanSprite(TILE_SIZE * 3, TILE_SIZE*14 , cam->getMoveDir());
+	pMegaman = new MegamanSprite(TILE_SIZE * 10, TILE_SIZE*14 , cam->getMoveDir());
 	//pMegaman = new MegamanSprite(7500, 1800, cam->getMoveDir());
    //pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
    //pMegaman = new MegamanSprite(120, 120+16*48, cam->getMoveDir());

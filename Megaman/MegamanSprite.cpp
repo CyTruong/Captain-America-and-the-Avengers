@@ -78,7 +78,7 @@ MegamanSprite::MegamanSprite(float respawnX, float respawnY, Direction movedir)
 	this->pData->ppTextureArrays[MegamanData::DEAD]->setAnchorPoint(0.5f, 1.0f);
 	this->pData->bodyRects[MegamanData::DEAD] = RectF(0, -0, 1, 1);
 
-	this->pData->ppTextureArrays[MegamanData::DAMAGED] = new TextureArray(RESOURCE_SPRITE, "Megaman", "Damaged", 2, 60);
+	this->pData->ppTextureArrays[MegamanData::DAMAGED] = new TextureArray(RESOURCE_SPRITE, "Captain", "Damaged", 1, 60);
 	this->pData->ppTextureArrays[MegamanData::DAMAGED]->setAnchorPoint(0.5f, 0.8f);
 	this->pData->bodyRects[MegamanData::DAMAGED] = RectF(0, -0, 1, 1);
 

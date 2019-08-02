@@ -10,7 +10,7 @@ WizardStandingState::WizardStandingState(EnemyData * pData)
 	this->pData->iCurrentArr = WizardData::STAND;
 	this->waittingFrame = 40;
 	this->waittingCount = 0;
-	this->acceleration = 0.2;
+	this->acceleration = 0.6;
 }
 
 void WizardStandingState::onUpdate()

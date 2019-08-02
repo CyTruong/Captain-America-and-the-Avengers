@@ -3,11 +3,9 @@
 #include "SpriteState.h"
 #include "MegamanData.h"
 #include "CaptainKickSprite.h"
-#include "CaptainSheildSprite.h"
-
 #include "CaptainPunchSprite.h"
+#include "CaptainSheildSprite.h"
 #include "UI.h"
-
 //#include "Sound.h"
 
 class MegamanState : public SpriteState
@@ -55,7 +53,6 @@ public:
 				pData->Bullets.push_back(new CaptainPunchSprite(this->pData->bulletSize, x, y, speed, angle));
 				return;
 			}
-			
 			if (pData->dir.isRight())
 			{
 				pData->Bullets.at(0)->Trigger(1);

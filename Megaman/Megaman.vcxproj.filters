@@ -528,6 +528,39 @@
     <ClInclude Include="CaptainPunchSprite.h">
       <Filter>Bullets\Captain</Filter>
     </ClInclude>
+    <ClInclude Include="RocketSoldierNormalRocketMovingState.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSoldierNormalRocketSprite.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSoldierNormalRocketData.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSoldierRunningState.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSoldierData.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSoldierDeadState.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSoldierShootState.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSoldierSprite.h">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardDropdownBulletSprite.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardDropdownBulletMovingState.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
+    <ClInclude Include="WizardDropdownBulletData.h">
+      <Filter>Bullets\Wizard</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KeyBoard.cpp">
@@ -811,6 +844,27 @@
     </ClCompile>
     <ClCompile Include="CaptainPunchSprite.cpp">
       <Filter>Bullets\Captain</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketSoldierNormalRocketSprite.cpp">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketSoldierShootState.cpp">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketSoldierData.cpp">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketSoldierSprite.cpp">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketSoldierRunningState.cpp">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketSoldierDeadState.cpp">
+      <Filter>Enemies\RocketSoldier</Filter>
+    </ClCompile>
+    <ClCompile Include="WizardDropdownBulletSprite.cpp">
+      <Filter>Bullets\Wizard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
