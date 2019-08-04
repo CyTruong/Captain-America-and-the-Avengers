@@ -29,7 +29,12 @@ RocketSoldierNormalRocketSprite::RocketSoldierNormalRocketSprite(float x, float 
 
 void RocketSoldierNormalRocketSprite::draw(Camera * cam)
 {
-	pData->ppTextureArrays[this->pData->iCurrentArr]->drawFlipX(pData->x, pData->y, cam);
+	if (angle < M_PI_4) {
+		pData->ppTextureArrays[this->pData->iCurrentArr]->drawFlipX(pData->x, pData->y, cam);
+	}
+	else
+		pData->ppTextureArrays[this->pData->iCurrentArr]->draw(pData->x, pData->y, cam);
+
 }
 
 void RocketSoldierNormalRocketSprite::update()

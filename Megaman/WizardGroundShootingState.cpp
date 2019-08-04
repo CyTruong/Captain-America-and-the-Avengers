@@ -32,7 +32,7 @@ void WizardGroundShootingState::onUpdate()
 	else
 		this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 	if (bulletcount >3) {
-		transition(new WizardFlyingAttackState(this->pData,RectF(20,40,400,380)));
+		transition(new WizardFlyingAttackState(this->pData, RectF(16,16, 160, 200)));
 	}
 }
 
@@ -42,6 +42,7 @@ void WizardGroundShootingState::onCollision(RectF rect)
 
 void WizardGroundShootingState::onCollision(CollisionRectF rect)
 {
+
 }
 
 

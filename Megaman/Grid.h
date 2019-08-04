@@ -2,6 +2,7 @@
 #include "Object.h"
 #include "define.h"
 #include <vector>
+#include "UI.h"
 
 class  GridNode
 {
@@ -15,18 +16,29 @@ private:
 	int gameWidth, gameHeight;
 	GridNode** Nodes;
 	int hang, cot;
-	
+
 public:
-	Grid(){
-		gameHeight = 2040;
-		gameWidth = 7700;
+	Grid() {
+
+		//hcmt 
+		if (UIComponents::getInstance()->getMegamanX() > 126 * 16)
+		{
+			gameHeight = 16*16;
+			gameWidth = 16*16;
+
+		}
+		else
+		{
+			gameHeight = 480;
+			gameWidth = 128 * 16;
+		}
 		nodeWidth = SCREEN_WIDTH / 2;
 		nodeHeight = SCREEN_HEIGHT / 2;
-		hang = gameHeight / nodeHeight +1;
-		cot = gameWidth / nodeWidth +1;
-		Nodes = new GridNode*[hang+1];
-		for(int i = 0; i <= hang; i++) {
-			Nodes[i] = new GridNode[cot+1];
+		hang = gameHeight / nodeHeight + 1;
+		cot = gameWidth / nodeWidth + 1;
+		Nodes = new GridNode*[hang + 1];
+		for (int i = 0; i <= hang; i++) {
+			Nodes[i] = new GridNode[cot + 1];
 		}
 
 	}
@@ -54,7 +66,7 @@ public:
 	}
 
 	void clear() {
-		
+
 	}
 	void getObjectlist(std::vector < Object* >& returnList, RectF camRect)
 	{
@@ -74,10 +86,10 @@ public:
 
 	void getObjectlist(std::vector < CollisionRectF >& returnList, RectF object, RectF camRect)
 	{
-	
+
 		int posX = object.x / nodeWidth;
 		int posY = object.y / nodeHeight;
-		int posX2 = (object.x + object.width ) / nodeWidth;
+		int posX2 = (object.x + object.width) / nodeWidth;
 		int posY2 = (object.y + object.height) / nodeHeight;
 		for (int i = posY; i <= posY2; i++) {
 			for (int j = posX; j <= posX2; j++) {
@@ -91,5 +103,5 @@ public:
 
 	}
 
-	
+
 };

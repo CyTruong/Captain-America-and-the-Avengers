@@ -25,6 +25,10 @@ void WizardRunningState::onUpdate()
 	this->pData->vx = this->pData->transform(speed);
 	this->pData->x += this->pData->vx;
 
+	pData->vy += 1; 
+	pData->y += pData->vy;
+
+
 	if (count > changeStateCount ) {
 		transition(new WizardGroundShootingState(this->pData));
 	}
@@ -34,12 +38,15 @@ void WizardRunningState::onUpdate()
 
 void WizardRunningState::onCollision(RectF rect)
 {
+	this->pData->vy = 0;
 
 }
 
 void WizardRunningState::onCollision(CollisionRectF rect)
 {
-	this->pData->vy = 0;
+	pData->y -= pData->vy;
+	pData->vy = 0;
+
 }
 
 void WizardRunningState::onDead()

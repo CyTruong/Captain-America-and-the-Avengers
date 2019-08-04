@@ -4,24 +4,33 @@
 #include "ShurikanSprite.h"
 #include "ZuliaSprite.h"
 #include "DoubleRocketSprite.h"
+#include "BlueSoldierSprite.h"
 #include "RocketFlySprite.h"
 #include "WizardSprite.h"
 #include "DoorSprite.h"
 #include "RocketSoldierSprite.h"
 
+
+#include "RocketFlySprite.h"
+#include "WizardSprite.h"
+#include "DoorSprite.h"
+#include "RocketSoldierSprite.h"
 EnemyCreator* EnemyCreator::instance = nullptr;
 
 
 EnemyCreator::EnemyCreator()
 { 
 
-
+	addAppearDirection("BlueSoldier", Direction::createRight());
 	addAppearDirection("SingleGun", Direction::createRight());
 	addAppearDirection("Elevator", Direction::createRight());
 	addAppearDirection("DoubleRocket", Direction::createRight());
 	addAppearDirection("Shurikan", Direction::createRight());
 	addAppearDirection("Zulia", Direction::createLeft());
 	addAppearDirection("Wizard",Direction::createRight());
+	addAppearDirection("RocketSoldier", Direction::createRight());
+
+	addAppearDirection("Wizard", Direction::createRight());
 	addAppearDirection("RocketSoldier", Direction::createRight());
 
 }
@@ -45,6 +54,9 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	if (enemyName == "SingleGun") {
 		return new SingleGunSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
+	if (enemyName == "BlueSoldier") {
+		return new BlueSoldierSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
+	}
 	if (enemyName == "DoubleRocket") {
 		return new DoubleRocketSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
@@ -58,6 +70,10 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	{
 		return new RocketFlySprite(respawnX, respawnY, getAppearDir(enemyName),true, bulletSprites);
 	}
+	if (enemyName == "Wizard")
+	{
+		return new WizardSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
+	}
 	if (enemyName=="Wizard")
 	{
 		return new WizardSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
@@ -66,7 +82,8 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	{
 		return new RocketSoldierSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
-}	
+}
+
 
 ObjectSprite * EnemyCreator::createObjectSprite(std::string name, int respawnX, int respawnY)
 {

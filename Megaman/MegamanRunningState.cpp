@@ -58,7 +58,7 @@ void MegamanRunningState::onUpdate()
 
 	if (pData->isFrire && pData->iCurrentArr == MegamanData::RUN) {
 		pData->setiCurrentArray(MegamanData::RUNSHOOT);
-		if (UIComponents::getInstance()->getisSheildFlying()) {
+		if (UIComponents::getInstance()->getSheildFlying()) {
 			pData->setiCurrentArray(MegamanData::PUNCH);
 		}
 	}

@@ -46,7 +46,7 @@ public:
 			speed *= (pData->isRapid) ? 1.25 : 1;
 		//	pData->Bullets.push_back(new MgmNormalBulletSprite(this->pData->bulletSize, x, y, speed, angle));
 		//	pData->Bullets.push_back(new CaptainSheildSprite(this->pData->bulletSize, x, y, speed, angle));
-			if (UIComponents::getInstance()->getisSheildFlying()) {
+			if (UIComponents::getInstance()->getSheildFlying()) {
 				LogWriter::getInstance()->write("Captain punchhhhh");
 				speed = 4;
 				speed *= (pData->isRapid) ? 1.25 : 1;

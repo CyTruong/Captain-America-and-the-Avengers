@@ -44,6 +44,7 @@ public:
 			Movingvector.x = (Movingvector.x + NewVector.x) / 2;
 			Movingvector.y = (Movingvector.y + NewVector.y) / 2;
 
+			// 1.8 chinh speed  
 			k = sqrt(tempx*tempx + tempy*tempy) / 1.8;
 		}
 		waitting4updateVector += 1;

@@ -28,23 +28,32 @@ void Scene1::loadSound()
 
 Scene1::Scene1()
 {
-	std::string mapName = "BlastHornetStage2";
+	std::string mapName = "Map1";
 
 	pMap = new Map(mapName);
+
+	// if mapname ; 
+
+	int numberColumOfMap = NUMBER_COLUMM_MAP1;
+	int numberRowOfMap = NUMBER_ROW_MAP1; 
+	int startPointX = START_MAP1_POINT_X; 
+	int startPointY = START_MAP1_POINT_Y; 
+
 
 
 	loadSound();
 
 	int viewPortSize = pMap->getMapRect().width < pMap->getMapRect().height ? pMap->getMapRect().width : pMap->getMapRect().height;
-	viewPortSize = 480;
+	viewPortSize = VIEWPORT_SIZE;
 	viewPort = new ViewPort(RectI(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
 
+	Cambounds camBounds(mapName); 
 
-	cam = new Camera(viewPort, 0, 0, RectF(0, 0, 16 * 30, 30 * 16), RectF(0, 0, 128 * 16, 30 * 16));
+	cam = new Camera(viewPort, startPointX, startPointY, RectF(0, 0, TILE_SIZE * 16, TILE_SIZE * 16), RectF(0, 0, numberColumOfMap * TILE_SIZE, numberRowOfMap * TILE_SIZE), camBounds.getCamBounds(), 2);
 
 
 
-	pMegaman = new MegamanSprite(16 * 5, 0, cam->getMoveDir());
+	pMegaman = new MegamanSprite(TILE_SIZE * 10, TILE_SIZE*14 , cam->getMoveDir());
 	//pMegaman = new MegamanSprite(7500, 1800, cam->getMoveDir());
    //pMegaman = new MegamanSprite( 1940, 1035, cam->getMoveDir());
    //pMegaman = new MegamanSprite(120, 120+16*48, cam->getMoveDir());
@@ -187,33 +196,6 @@ void Scene1::handlerInput()
 }
 void Scene1::onUpdate()
 {
-	//	if (isGameOver)
-	//	{
-	//		count++;
-	//		if (count == nTransitionFrames)
-	//		{
-	//			//GameSaveLoad::getInstance()->checkAndSaveScore(UIComponents::getInstance()->getScore());
-	//			SceneManager::getInstance()->createSceneWithRandomTransition(new GameOverScene());
-	//			return;
-	//		}
-	//	}
-	//	else if (isFinish)
-	//	{
-	//		count++;
-	//		if (count == nTransitionFrames)
-	//		{
-	//			if (UIComponents::getInstance()->getCurrentStage() < 3)
-	//			{
-	//				UIComponents::getInstance()->setStage(UIComponents::getInstance()->getCurrentStage() + 1);
-	//				SceneManager::getInstance()->createScene(new LoadingScene());
-	//			}
-	//			else
-	//			{
-	//				SceneManager::getInstance()->createScene(new EndingScene());
-	//			}
-	//			return;
-	//		}
-	//	}
 
 	this->handlerInput(); 
 
@@ -313,40 +295,10 @@ void Scene1::Update()
 	int My = pMegaman->getY();
 	int i = -1; 
 
-	//
-	for (int  j = 0; j < 10; j++)
-	{
-		if (cam->pCamPos[j].d==0)
-		{
-			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 480 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 240)
-			{
-
-				i = j;
-			}
-		}
-		if (cam->pCamPos[j].d == 1)
-		{
-			if (Mx > cam->pCamPos[j].a &&Mx<cam->pCamPos[j].a + 480 && My > cam->pCamPos[j].b&&My <= cam->pCamPos[j].c+240)
-			{
-				i = j; 
-
-			}
-
-		}
-		if (cam->pCamPos[j].d ==2 )
-		{
-			if (My > cam->pCamPos[j].a &&My<cam->pCamPos[j].a + 480 && Mx>cam->pCamPos[j].b&&Mx <= cam->pCamPos[j].c + 240)
-			{
-
-				i = j;
-			}
-		}
-
-	}
+	// kiem tra loai map ma cam di chuyen onlyngang ,doc , ngangdoc , boss 
 
 
-
-	cam->update(pMegaman->getX(), pMegaman->getY(), pMegaman->getMoveDir(),isCamStop, i );
+	cam->update(pMegaman->getX() , pMegaman->getY(), pMegaman->getMoveDir(), isCamStop, i);
 
 
 	//update megaman theo cái cam

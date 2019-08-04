@@ -2,7 +2,7 @@
 #include <algorithm> 
 #include <typeinfo>
 #include "CollisionMap1.h"
-
+#include "CollisionBossMap1.h"
 
 Map::Map(std::string mapName)
 	:
@@ -13,10 +13,21 @@ Map::Map(std::string mapName)
 	//change de xml 
 
 	// load tile set
-	this->width = NUMBER_COLUMM_MAP1;
-	this->height = NUMBER_ROW_MAP1;
 	this->tileSize = TILE_SIZE;
-	loadTileSet();
+
+	if (mapName=="Map1")
+	{
+		this->width = NUMBER_COLUMM_MAP1;
+		this->height = NUMBER_ROW_MAP1;
+	}
+	else if (mapName=="BossMap1")
+	{
+		this->width = NUMBER_COLUMM_BOSSMAP1;
+		this->height = NUMBER_ROW_BOSSMAP1;
+	}
+	
+	
+	loadTileSet( mapName);
 
 	// load from file txt 
 
@@ -31,7 +42,7 @@ Map::Map(std::string mapName)
 	//	}
 	//}
 
-	loadLayer();
+	loadLayer(mapName);
 	// create tileTmx in BackGroundLayer
 	for (int i = 0; i < layers.size(); i++)
 	{
@@ -47,8 +58,12 @@ Map::Map(std::string mapName)
 	//		
 	//	}
 	//}
-	collisionMap1 colRect;
-	vector<CollisionRectF> colRectF = colRect.getColRectF();
+	vector<CollisionRectF> colRectF; 
+
+
+		collisionMap1 colRect(mapName);
+	
+		colRectF= colRect.getColRectF();
 
 
 	loadCollisionRect(colRectF);
@@ -123,40 +138,30 @@ Map::~Map()
 #pragma region 
 
 
-void Map::loadTileSet()
+void Map::loadTileSet(string mapname)
 {
+	std::string s = std::string("Resource\\Map\\"+mapname+"Tileset.png");
+
 	TileSet* tileSet;
 	tileSet = new TileSet();
-	std::string s = std::string("Resource\\Map\\captainAmerica.png");
-
 	std::wstring tileSetSource(s.begin(), s.end());
 
 	//tileSet->name = e->Attribute("name");
-	tileSet->name = "captainAmerica";
+	tileSet->name = mapname+"Tileset";
 
 	//Graphics::getInstance()->loadTexture(s, e->Attribute("name"));
 	Graphics::getInstance()->loadTexture(s, tileSet->name);
 	tileSet->pTexture = Graphics::getInstance()->getTexture(tileSet->name)->pTexture;
 
-	/*e->FirstChildElement()->Attribute("width", &tileSet->width);
-	e->FirstChildElement()->Attribute("height", &tileSet->height);
-	e->Attribute("firstgid", &tileSet->firstGridID);
-	e->Attribute("tilewidth", &tileSet->tileWidth);
-	e->Attribute("tileheight", &tileSet->tileHeight);
-	e->Attribute("spacing", &tileSet->spacing);
-	e->Attribute("margin", &tileSet->margin);*/
-	tileSet->width = 128 * 16;
-	tileSet->height = 30 * 16;
+	
+
+	tileSet->width = TILE_SIZE*this->width; 
+	tileSet->height = TILE_SIZE*this->height;
 	tileSet->firstGridID = 0;
-	tileSet->tileWidth = 16;
-	tileSet->tileHeight = 16;
+	tileSet->tileWidth = TILE_SIZE;
+	tileSet->tileHeight = TILE_SIZE;
 	tileSet->spacing = 0;
 	tileSet->margin = 0;
-
-
-
-
-
 
 
 	int nCol = tileSet->width / (tileSet->tileWidth + tileSet->spacing);
@@ -185,21 +190,19 @@ void Map::loadTileSet()
 
 	tileSets.push_back(tileSet);
 
-
-
 }
 
-void Map::loadLayer()
+void Map::loadLayer(string mapname)
 {
 
-	mapArr = new int*[30]; 	// w, h 128 ,30 
-	TileLayer* pTileLayer = new TileLayer(tileSize, width, height, "captainAmerica", tileSets);
-	std::vector<std::vector<int>>  data(30, vector<int>(128, 0));
+	mapArr = new int*[height]; 	// w, h 128 ,30 
+	TileLayer* pTileLayer = new TileLayer(tileSize, width, height, mapName, tileSets);
+	std::vector<std::vector<int>>  data(height, vector<int>(width, 0));
 	pTileLayer->fromfile(mapArr);
 
-	for (int j = 0; j < 30; j++)
+	for (int j = 0; j < height; j++)
 	{
-		for (int i = 0; i < 128; i++)
+		for (int i = 0; i < width; i++)
 		{
 			data[j][i] = mapArr[j][i];
 
@@ -325,9 +328,26 @@ void Map::loadObject()
 	//	}
 
 	//}
+	if (mapName=="Map1")
+	{
+		Object* enemy = new Object("BlueSoldier", "enemy", 224, 16 * 30 - 50 - 16 * 3, 0, 24, 43, RectF(224, 16*30-50-16*3, 24, 43));
+		Objects.push_back(enemy);
+
+		Object* enemy1 = new Object("RocketSoldier", "enemy", 320, 16*30-50-16*3, 1, 24, 43, RectF(320, 16 * 30 - 50 - 16 * 3, 24, 43));
+		Objects.push_back(enemy1);
+
+		// enemy 2 
+
+
+	}
+
+	else
+	{
+		Object* enemy = new Object("Wizard", "enemy", 160, 160, 0, 24, 43, RectF(160, 160, 24, 43));
+		Objects.push_back(enemy);
+
+	}
 	
-	Object* enemy = new Object("RocketSoldier", "enemy", 300, 300, 2, 20, 20, RectF(300, 300, 20, 20));
-	Objects.push_back(enemy);
 
 }
 

@@ -3,12 +3,12 @@
 
 #define FPS 60
 #define MSPF 1000.0f/ 60
-#define SCREEN_HEIGHT 480	
-#define SCREEN_WIDTH 480
+#define SCREEN_HEIGHT 256	
+#define SCREEN_WIDTH 256
 #define RESOURCE_SPRITE "Resource\\Sprite\\"
-#define NUMBER_COLUMM_MAP1 128
-#define NUMBER_ROW_MAP1 30
 #define TILE_SIZE 16
+#define VIEWPORT_SIZE 256 
+
 
 #define MEGAMANRUNSPEED 3
 #define SINGLEGUNRUNSPEED 1.25
@@ -19,6 +19,22 @@
 #define MEGAMAN_CHARGE_LIMIT_L 110
 
 #define FIRE_COUNTING_FRAME 10
+// TileSet 
+#define nColumnsOfTileset 16 
+
+
+// map1 
+#define NUMBER_COLUMM_MAP1 128
+#define NUMBER_ROW_MAP1 30
+#define START_MAP1_POINT_X 0
+#define START_MAP1_POINT_Y 224
+// bossMap1
+
+#define NUMBER_COLUMM_BOSSMAP1 16
+#define NUMBER_ROW_BOSSMAP1 16
+#define START_BOSSMAP1_POINT_X 0
+#define START_BOSSMAP1_POINT_Y 0 
+
 
 
 enum BulletTypes

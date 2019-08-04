@@ -6,7 +6,11 @@ Game::Game(HWND hWnd)
 {
 	Graphics::create(hWnd);
 	Sound::create(hWnd);
+	
+	flag = 0; 
 	SceneManager::GetInstance()->createScene(new Scene1());
+
+
 }
 void Game::Update()
 {
@@ -20,6 +24,13 @@ void Game::Update()
 		SceneManager::getInstance()->updateWithEffect();
 	}*/
 	SceneManager::GetInstance()->GetCurScene()->onUpdate();
+
+	if (UIComponents::getInstance()->getMegamanX()>126*16 &&flag==0)
+	{ 
+		flag = 1; 
+		SceneManager::GetInstance()->createScene(new Boss1Scene());
+
+	}	
 
 }
 

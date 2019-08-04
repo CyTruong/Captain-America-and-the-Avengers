@@ -42,7 +42,10 @@ public:
 			return;
 		}
 		if (pData->iCurrentArr == CaptainSheildData::FLY) {
+
 			UIComponents::getInstance()->setisSheildFlying(true);
+
+
 			if (!this->back) {
 				if (abs( pData->x - UIComponents::getInstance()->getMegamanX()) > 150) {
 					this->back = true;
