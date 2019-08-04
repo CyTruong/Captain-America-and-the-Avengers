@@ -95,7 +95,7 @@ public:
 			for (int j = posX; j <= posX2; j++) {
 				for (int k = 0; k < Nodes[i][j].arrCollisionRecF.size(); k++) {
 					if (Nodes[i][j].arrCollisionRecF[k].rect.checkCollision(camRect)) {
-						returnList.push_back(Nodes[i][j].arrCollisionRecF[k]);
+							returnList.push_back(Nodes[i][j].arrCollisionRecF[k]);
 					}
 				}
 			}

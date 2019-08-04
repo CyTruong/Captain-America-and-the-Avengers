@@ -43,8 +43,6 @@ void WizardStandingState::onUpdate()
 void WizardStandingState::onCollision(RectF rect)
 {
 
-
-
 }
 
 void WizardStandingState::onCollision(CollisionRectF rect)

@@ -39,13 +39,14 @@ void WizardRunningState::onUpdate()
 void WizardRunningState::onCollision(RectF rect)
 {
 	this->pData->vy = 0;
+
 }
 
 void WizardRunningState::onCollision(CollisionRectF rect)
 {
 	pData->y -= pData->vy;
 	pData->vy = 0;
-	
+
 }
 
 void WizardRunningState::onDead()

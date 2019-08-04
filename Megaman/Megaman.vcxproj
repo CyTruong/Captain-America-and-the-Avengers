@@ -150,6 +150,14 @@
     <ClInclude Include="BlueSoldierSprite.h" />
     <ClInclude Include="BlueSoldierSitState.h" />
     <ClInclude Include="Boss1Scene.h" />
+    <ClInclude Include="RocketSoldierDeadState.h" />
+    <ClInclude Include="RocketSoldierNormalRocketData.h" />
+    <ClInclude Include="RocketSoldierNormalRocketMovingState.h" />
+    <ClInclude Include="RocketSoldierNormalRocketSprite.h" />
+    <ClInclude Include="RocketSoldierRunningState.h" />
+    <ClInclude Include="RocketSoldierShootState.h" />
+    <ClInclude Include="RocketSoldierSprite.h" />
+
     <ClInclude Include="BulletSprite.h" />
     <ClInclude Include="BulletState.h" />
     <ClInclude Include="CamBound.h" />

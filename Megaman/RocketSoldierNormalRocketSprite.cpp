@@ -34,6 +34,7 @@ void RocketSoldierNormalRocketSprite::draw(Camera * cam)
 	}
 	else
 		pData->ppTextureArrays[this->pData->iCurrentArr]->draw(pData->x, pData->y, cam);
+
 }
 
 void RocketSoldierNormalRocketSprite::update()

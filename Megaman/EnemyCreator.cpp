@@ -4,8 +4,12 @@
 #include "ShurikanSprite.h"
 #include "ZuliaSprite.h"
 #include "DoubleRocketSprite.h"
-
 #include "BlueSoldierSprite.h"
+#include "RocketFlySprite.h"
+#include "WizardSprite.h"
+#include "DoorSprite.h"
+#include "RocketSoldierSprite.h"
+
 
 #include "RocketFlySprite.h"
 #include "WizardSprite.h"
@@ -23,6 +27,8 @@ EnemyCreator::EnemyCreator()
 	addAppearDirection("DoubleRocket", Direction::createRight());
 	addAppearDirection("Shurikan", Direction::createRight());
 	addAppearDirection("Zulia", Direction::createLeft());
+	addAppearDirection("Wizard",Direction::createRight());
+	addAppearDirection("RocketSoldier", Direction::createRight());
 
 	addAppearDirection("Wizard", Direction::createRight());
 	addAppearDirection("RocketSoldier", Direction::createRight());
@@ -60,7 +66,6 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	if (enemyName == "Zulia") {
 		return new ZuliaSprite(respawnX, respawnY, getAppearDir(enemyName), bulletSprites);
 	}
-
 	if (enemyName=="RocketFly")
 	{
 		return new RocketFlySprite(respawnX, respawnY, getAppearDir(enemyName),true, bulletSprites);
@@ -69,13 +74,16 @@ EnemySprite * EnemyCreator::createEnemySprite(std::string enemyName, int respawn
 	{
 		return new WizardSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
-
+	if (enemyName=="Wizard")
+	{
+		return new WizardSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
+	}
 	if (enemyName == "RocketSoldier")
 	{
 		return new RocketSoldierSprite(respawnX, respawnY, getAppearDir(enemyName), true, bulletSprites);
 	}
-
 }
+
 
 ObjectSprite * EnemyCreator::createObjectSprite(std::string name, int respawnX, int respawnY)
 {

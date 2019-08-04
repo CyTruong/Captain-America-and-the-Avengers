@@ -1,8 +1,12 @@
 #include "WizardFlyingAttackState.h"
 #include "WizardData.h"
-
 #include "WizardDropdownBulletSprite.h"
 #include "WizardStandingState.h"
+#include "WizardDropdownBulletSprite.h"
+#include "WizardStandingState.h"
+#include "WizardData.h"
+
+
 
 WizardFlyingAttackState::WizardFlyingAttackState(EnemyData * pData, RectF Range)
 {
@@ -20,6 +24,7 @@ void WizardFlyingAttackState::onUpdate()
 	int Vy = 3;
 	UIComponents::getInstance()->setShurikanHp(pData->HP);
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
+
 	
 	if (step == 0) {
 
@@ -35,6 +40,7 @@ void WizardFlyingAttackState::onUpdate()
 	if (step == 1) {
 		if (this->pData->x < this->Range.x + this->Range.width / 2) {
 			this->pData->dir = Direction::createRight();
+
 		}
 		else
 		{
@@ -56,12 +62,14 @@ void WizardFlyingAttackState::onUpdate()
 		this->pData->vx = 0;
 		this->pData->vy = Vy;
 		if (this->pData->y + this->pData->vy > this->Range.y + this->Range.height) {
+
 			step = 0;
 			step = 4;
 		}
 	}
 
 	if (step == 4) {
+
 		this->pData->y -= 10;
 		transition(new WizardStandingState(this->pData));
 		return;

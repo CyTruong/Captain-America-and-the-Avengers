@@ -18,7 +18,6 @@ public:
 
 		pData->vy = sin(angle) * speed;
 		pData->vx = cos(angle) * speed;
-
 		UIComponents::getInstance()->setisSheildFlying(false);
 
 	}
@@ -46,6 +45,7 @@ public:
 
 			UIComponents::getInstance()->setisSheildFlying(true);
 
+
 			if (!this->back) {
 				if (abs( pData->x - UIComponents::getInstance()->getMegamanX()) > 150) {
 					this->back = true;
@@ -60,9 +60,7 @@ public:
 					this->pData->vy = 0;
 					this->pData->vy = 0;
 					this->back = false;
-
 					UIComponents::getInstance()->setisSheildFlying(false);
-
 				}
 			}
 		}
