@@ -16,7 +16,7 @@ public:
 		this->pData = new SpriteData();
 		this->megamanSprite = megamansprite;
 		this->pData->ppTextureArrays = new TextureArray*[1];
-		this->pData->ppTextureArrays[0] = new  TextureArray(RESOURCE_SPRITE, "BG", "1", 7, 5);
+		this->pData->ppTextureArrays[0] = new  TextureArray(RESOURCE_SPRITE, "BG", "2", 5, 5);
 		this->pData->ppTextureArrays[0]->setAnchorPoint(0, 0);
 	}
 
@@ -28,7 +28,7 @@ public:
 	{
 		int x = (int)(this->megamanSprite->getX() / REDUCTION) % BG_WIDTH;
 		int y = (int)(this->megamanSprite->getY() / REDUCTION / 1.5) % BG_HEIGHT;
-		this->pData->ppTextureArrays[this->pData->iCurrentArr]->draw(cam->getX() - x, cam->getY() - y, cam);
+		this->pData->ppTextureArrays[this->pData->iCurrentArr]->draw(cam->getX(), cam->getY(), cam);
 	}
 	
 

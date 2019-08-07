@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{FD782655-F234-4592-872E-A4755EE1B260}</ProjectGuid>
     <RootNamespace>Megaman</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,8 +78,8 @@
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\DirectX SDK\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\DirectX SDK\Lib\x86;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
@@ -150,14 +150,6 @@
     <ClInclude Include="BlueSoldierSprite.h" />
     <ClInclude Include="BlueSoldierSitState.h" />
     <ClInclude Include="Boss1Scene.h" />
-    <ClInclude Include="RocketSoldierDeadState.h" />
-    <ClInclude Include="RocketSoldierNormalRocketData.h" />
-    <ClInclude Include="RocketSoldierNormalRocketMovingState.h" />
-    <ClInclude Include="RocketSoldierNormalRocketSprite.h" />
-    <ClInclude Include="RocketSoldierRunningState.h" />
-    <ClInclude Include="RocketSoldierShootState.h" />
-    <ClInclude Include="RocketSoldierSprite.h" />
-
     <ClInclude Include="BulletSprite.h" />
     <ClInclude Include="BulletState.h" />
     <ClInclude Include="CamBound.h" />

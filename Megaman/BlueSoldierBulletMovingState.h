@@ -12,9 +12,9 @@ public:
 
 		pData->iCurrentArr = icurent;
 		this->speed = speed;
-
-		pData->vy = sin(angle) * speed;
 		pData->vx = cos(angle) * speed;
+		this->pData->y += 5;
+		this->pData->vy = 0;
 	}
 
 	virtual void onUpdate() override
@@ -26,9 +26,11 @@ public:
 		pData->ppTextureArrays[pData->iCurrentArr]->update();
 
 		pData->x += pData->vx;
-
 		pData->y += pData->vy;
 
+		if (this->pData->y <=2) {
+			this->pData->isDesTroyed = true;
+		}
 	}
 
 	 virtual void onCollision(CollisionRectF rect) override

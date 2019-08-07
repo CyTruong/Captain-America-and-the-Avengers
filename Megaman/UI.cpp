@@ -17,7 +17,7 @@ UIComponents* UIComponents::getInstance()
 UIComponents::UIComponents()
 {
 	score = 0;
-	Megamanhp = 16;
+	Megamanhp = 4;
 	currentStage = 1;
 	Shurikanhp = 0; 
 	this->isTargetting = false;

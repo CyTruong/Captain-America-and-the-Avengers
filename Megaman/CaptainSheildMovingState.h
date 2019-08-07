@@ -18,6 +18,7 @@ public:
 
 		pData->vy = sin(angle) * speed;
 		pData->vx = cos(angle) * speed;
+
 		UIComponents::getInstance()->setisSheildFlying(false);
 
 	}
@@ -36,18 +37,26 @@ public:
 			pData->vy = 0;
 		}
 		pData->ppTextureArrays[pData->iCurrentArr]->update();
-		if (pData->iCurrentArr == CaptainSheildData::HOLD) {
+		if (pData->iCurrentArr == CaptainSheildData::HOLDLEFT || pData->iCurrentArr == CaptainSheildData::HOLDRIGHT || pData->iCurrentArr==CaptainSheildData::HOLDAIR) {
 			pData->x = UIComponents::getInstance()->getMegamanX();
 			pData->y = UIComponents::getInstance()->getMegamanY();
+			if (UIComponents::getInstance()->getSheild_Direction() == Direction::createLeft()) {
+				this->pData->iCurrentArr = CaptainSheildData::HOLDLEFT;
+			}
+			if (UIComponents::getInstance()->getSheild_Direction() == Direction::createRight()) {
+				this->pData->iCurrentArr = CaptainSheildData::HOLDRIGHT;
+			}
+			if (UIComponents::getInstance()->getSheild_Direction() == Direction::createNone()) {
+				this->pData->iCurrentArr = CaptainSheildData::HOLDAIR;
+			}
 			return;
 		}
 		if (pData->iCurrentArr == CaptainSheildData::FLY) {
 
 			UIComponents::getInstance()->setisSheildFlying(true);
 
-
 			if (!this->back) {
-				if (abs( pData->x - UIComponents::getInstance()->getMegamanX()) > 150) {
+				if (abs( pData->x - UIComponents::getInstance()->getMegamanX()) > 85){
 					this->back = true;
 				}
 			}
@@ -56,11 +65,13 @@ public:
 				this->pData->vy = (UIComponents::getInstance()->getMegamanY() > this->pData->y) ? this->pData->vy : -this->pData->vy;
 				this->pData->vx = ((UIComponents::getInstance()->getMegamanX() > this->pData->x) ? 1 : -1)*speed;
 				if (abs( UIComponents::getInstance()->getMegamanX() - this->pData->x )  <= 10) {
-					this->pData->iCurrentArr = CaptainSheildData::HOLD;
+					this->pData->iCurrentArr = CaptainSheildData::HOLDRIGHT;
 					this->pData->vy = 0;
 					this->pData->vy = 0;
 					this->back = false;
+
 					UIComponents::getInstance()->setisSheildFlying(false);
+
 				}
 			}
 		}

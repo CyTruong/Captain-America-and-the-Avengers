@@ -71,7 +71,7 @@ Scene1::Scene1()
 	isGameOver = false;
 	nTransitionFrames = 5 * 60;
 	count = 0;
-
+	bg = new BackGround(pMegaman);
 
 	//Sound::getInstance()->play("stage" + std::to_string(UIComponents::getInstance()->getCurrentStage()), true, 1);
 	//Sound::getInstance()->play("BlastHornet", true, 1);
@@ -225,7 +225,7 @@ void Scene1::render()
 
 	Graphics::getInstance()->beginRender();
 	Graphics::getInstance()->getSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
-	//bg->draw(cam);
+	bg->draw(cam);
 
 	//pMap->draw(cam);
 	pMap->drawTile(cam);
@@ -306,7 +306,7 @@ void Scene1::Update()
 
 	hpHub->update();
 
-	//bg->update();
+	bg->update();
 	/*if (pMegaman->getX() > 478 * 16)
 	{
 		hpHubBoss->update();

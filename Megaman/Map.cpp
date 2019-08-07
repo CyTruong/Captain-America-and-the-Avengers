@@ -76,12 +76,12 @@ Map::Map(std::string mapName)
 			loadObject();
 		}
 	}*/
+	createMapGridTree();
 
 	loadObject();
 
 	// create quadtree
 
-	createMapGridTree();
 	createMapCollsionTree();
 	bIsFinish = false;
 
@@ -141,7 +141,7 @@ Map::~Map()
 void Map::loadTileSet(string mapname)
 {
 	std::string s = std::string("Resource\\Map\\"+mapname+"Tileset.png");
-
+	this->tileSets =  vector<TileSet*>();
 	TileSet* tileSet;
 	tileSet = new TileSet();
 	std::wstring tileSetSource(s.begin(), s.end());
@@ -292,42 +292,6 @@ void Map::loadObject()
 	std::string name;
 	std::string type;
 
-	//for (TiXmlElement* e = pElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
-	//{
-	//	name = e->Attribute("name");
-	//	type = e->Attribute("type");
-	//	e->Attribute("id", &id);
-	//	e->Attribute("x", &rectX);
-	//	e->Attribute("y", &rectY);
-	//	e->Attribute("width", &width);
-	//	e->Attribute("height", &height);
-
-	//	if (name == "cameratranslateposition")
-	//	{
-	//		cameraTranslatePosition = RectF(rectX, rectY, width, height);
-	//	}
-	//	else if (name == "respawnposition")
-	//	{
-	//		respawnX = rectX + width / 2;
-	//		respawnY = rectY + height;
-	//	}
-	//	else
-	//	{
-	//		if (std::find(spriteNames.begin(), spriteNames.end(), name) == spriteNames.end())
-	//			spriteNames.push_back(name);
-	//		x = rectX;
-	//		y = rectY;
-
-	//		if (type != "object")
-	//		{
-	//			x = rectX + width / 2;
-	//			y = rectY + height;
-	//		}
-	//		Object* object = new Object(name, type, x, y, id, width, height, RectF(rectX, rectY, width, height));
-	//		Objects.push_back(object);
-	//	}
-
-	//}
 	if (mapName=="Map1")
 	{
 		Object* enemy = new Object("BlueSoldier", "enemy", 224, 16 * 30 - 50 - 16 * 3, 0, 24, 43, RectF(224, 16*30-50-16*3, 24, 43));
@@ -335,19 +299,22 @@ void Map::loadObject()
 
 		Object* enemy1 = new Object("RocketSoldier", "enemy", 320, 16*30-50-16*3, 1, 24, 43, RectF(320, 16 * 30 - 50 - 16 * 3, 24, 43));
 		Objects.push_back(enemy1);
-
-		// enemy 2 
-
-
 	}
-
 	else
 	{
 		Object* enemy = new Object("Wizard", "enemy", 160, 160, 0, 24, 43, RectF(160, 160, 24, 43));
 		Objects.push_back(enemy);
 
 	}
-	
+	//mapCollisionTree->clear();
+	//Thêm obj collision vào list có thể va chạm 
+	mapCollisionGrid->clear();
+	for (int i = 0; i < Objects.size(); i++)
+	{
+		if (EnemyMap.find(Objects[i]->id) == EnemyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
+			mapCollisionGrid->insert(Objects[i]);
+	}
+
 
 }
 
@@ -471,15 +438,6 @@ void Map::cleanPlayerBullet(Camera* cam, MegamanSprite* sprite)
 void Map::addEToMap(Camera* cam)
 {
 	
-	//mapCollisionTree->clear();
-	//Thêm obj collision vào list có thể va chạm 
-	mapCollisionGrid->clear();
-	for (int i = 0; i < Objects.size(); i++)
-	{
-
-		if (EnemyMap.find(Objects[i]->id) == EnemyMap.end() && objectMap.find(Objects[i]->id) == objectMap.end())
-			mapCollisionGrid->insert(Objects[i]);
-	}
 
 	//Lấy danh sách các object trong cam
 	std::vector < Object * > returnList;
@@ -801,6 +759,13 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 			for (int i = 0; i < bullets.size(); i++) {
 				if (sprite->isHittable() && bullets[i]->getBody().checkCollision(sprite->getBody()))
 				{
+					Direction sheildDir = UIComponents::getInstance()->getSheild_Direction();
+					if ((bullets[i]->getPdata()->vx < 0 && sheildDir == Direction::createRight())
+						|| (bullets[i]->getPdata()->vx > 0 && sheildDir == Direction::createLeft())) {
+
+						bullets[i]->Trigger(1);
+						break;
+					}
 					bullets[i]->destroy();
 					sprite->damaged();
 					break;
@@ -811,9 +776,36 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 	}
 #pragma endregion 
 
-#pragma region playerBulletvsEnemy
+#pragma region playerBulletvsEnemyBullet
 
+	//std::vector < BulletSprite* >& bullets = sprite->getBullets();
+	//for (int bulletIt = 0; bulletIt < bullets.size(); bulletIt++)
+	//{
+	//	if (!bullets[bulletIt]->isDesTroyed()) {
+	//		for (std::map < int, EnemySprite* > ::iterator EnemyIt = EnemyMap.begin(); EnemyIt != EnemyMap.end(); EnemyIt++)
+	//		{
+	//			if (!EnemyIt->second->isDesTroyed()) {
+	//				vector<BulletSprite* > Ebullets = EnemyIt->second->getBullets();
+	//				for (int i = 0; i < Ebullets.size(); i++) {
+	//					//nếu đạn enemy collision                   đạn Cap
+	//					if (Ebullets[i]->getBody().checkCollision(bullets[bulletIt]->getBody()))
+	//					{
+	//						Ebullets[i]->Trigger(1);
+	//					}
+	//				}
+	//			}
+
+	//		}
+	//	}
+	//	
+	//}
+
+
+#pragma endregion 
+
+#pragma region playerBulletvsEnemy
 	std::vector < BulletSprite* >& bullets = sprite->getBullets();
+	bullets = sprite->getBullets();
 	for (int bulletIt = 0; bulletIt < bullets.size(); bulletIt++)
 	{
 		if (!bullets[bulletIt]->isDesTroyed()) {
@@ -836,7 +828,7 @@ void Map::onCollisionvsPlayer(MegamanSprite* sprite, Camera* cam)
 
 			}
 		}
-		
+
 	}
 
 

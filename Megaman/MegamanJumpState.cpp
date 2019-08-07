@@ -38,7 +38,6 @@ MegamanJumpState::MegamanJumpState(MegamanData * data, bool isMoving, float vy, 
 	speedX = 1;
 	pData->vy = vy;
 	//	acceleration = 0.2f;
-
 	this->isMoving = isMoving; 
 	this->isCimping = isCimping; 
 	if (pData->vy < 0) {
@@ -512,7 +511,9 @@ void MegamanJumpState::onUpdate()
 	hittableCalculation();
 	undyingCalculation();
 	pData->ppTextureArrays[pData->iCurrentArr]->update();
-
+	if (abs(this->pData->vy)<3.2) {
+		UIComponents::getInstance()->setSheild_Direction(Direction::createNone());
+	}
 
 	if (pData->isCharging) {
 		pData->ChargingCount++;

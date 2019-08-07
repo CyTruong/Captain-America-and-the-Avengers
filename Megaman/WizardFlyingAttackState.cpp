@@ -1,12 +1,8 @@
-#include "WizardFlyingAttackState.h"
-#include "WizardData.h"
-#include "WizardDropdownBulletSprite.h"
-#include "WizardStandingState.h"
-#include "WizardDropdownBulletSprite.h"
-#include "WizardStandingState.h"
+﻿#include "WizardFlyingAttackState.h"
 #include "WizardData.h"
 
-
+#include "WizardDropdownBulletSprite.h"
+#include "WizardStandingState.h"
 
 WizardFlyingAttackState::WizardFlyingAttackState(EnemyData * pData, RectF Range)
 {
@@ -14,7 +10,7 @@ WizardFlyingAttackState::WizardFlyingAttackState(EnemyData * pData, RectF Range)
 	this->pData = pData;
 	this->pData->iCurrentArr = WizardData::FLY;
 
-	this->speed = 3;
+	this->speed = 1.2;
 	this->isshooting = false;
 	step = 0;
 }
@@ -24,8 +20,7 @@ void WizardFlyingAttackState::onUpdate()
 	int Vy = 3;
 	UIComponents::getInstance()->setShurikanHp(pData->HP);
 	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
-
-	
+	//bay lên
 	if (step == 0) {
 
 		if (this->pData->y + this->pData->vy > Range.y) {
@@ -37,10 +32,10 @@ void WizardFlyingAttackState::onUpdate()
 			step = 1;
 		}
 	}
+	//xác định phương bay ngang
 	if (step == 1) {
 		if (this->pData->x < this->Range.x + this->Range.width / 2) {
 			this->pData->dir = Direction::createRight();
-
 		}
 		else
 		{
@@ -48,6 +43,7 @@ void WizardFlyingAttackState::onUpdate()
 		}
 		step = 2;
 	}
+	//bay ngang
 	if (step == 2) {
 		this->pData->vy = 0;
 		this->pData->vx = this->pData->transform(this->speed);
@@ -58,18 +54,17 @@ void WizardFlyingAttackState::onUpdate()
 			this->pData->dir.reverse();
 		}
 	}
+	//bay xuống
 	if (step == 3) {
 		this->pData->vx = 0;
 		this->pData->vy = Vy;
 		if (this->pData->y + this->pData->vy > this->Range.y + this->Range.height) {
-
 			step = 0;
 			step = 4;
 		}
 	}
-
+	//hết mech
 	if (step == 4) {
-
 		this->pData->y -= 10;
 		transition(new WizardStandingState(this->pData));
 		return;
@@ -90,7 +85,6 @@ void WizardFlyingAttackState::onUpdate()
 		isshooting = false;
 		createBullet();
 	}
-	this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
 
 }
 

@@ -14,13 +14,13 @@ private:
 	std::vector < CollisionRectF > collisionRectFs;
 };
 
-collisionMap1::collisionMap1(string mapname )
+collisionMap1::collisionMap1(string mapname)
 
 {
 	CollisionRectF col;
 	RectI r;
 
-	if (mapname=="Map1")
+	if (mapname == "Map1")
 	{
 		r.x = 0;
 		r.y = 27 * 16;
@@ -41,32 +41,35 @@ collisionMap1::collisionMap1(string mapname )
 	}
 	else
 	{
+
+
 		r.x = 0;
-		r.y = 15*16;
+		r.y = 16 * 13;
 		r.width = 16 * 16;
 		r.height = 16;
 		col.rect = r;
 		col.type = "ground";
 		collisionRectFs.push_back(col);
 
+
+
 		r.x = 0;
-		r.y = 0;
-		r.width = 16;
+		r.y = 16 * 3;
+		r.width = 2;
 		r.height = 16 * 16;
 		col.rect = r;
 		col.type = "wall";
 		collisionRectFs.push_back(col);
 
-		
-		r.x = 15;
+		r.x = 16 * 15;
 		r.y = 0;
-		r.width = 16;
+		r.width = 2;
 		r.height = 16 * 16;
 		col.rect = r;
 		col.type = "wall";
 		collisionRectFs.push_back(col);
 	}
-	
+
 
 	/*r.x = 3 * 16;
 	r.y = 16 * 25;
@@ -76,7 +79,7 @@ collisionMap1::collisionMap1(string mapname )
 	col.type = "ground";
 	collisionRectFs.push_back(col);*/
 
-	
+
 
 	// chan cuoi wall 
 	/*r.x = 8*16;
@@ -93,8 +96,8 @@ collisionMap1::collisionMap1(string mapname )
 
 
 collisionMap1::~collisionMap1()
-{ 
-	collisionRectFs.clear(); 
+{
+	collisionRectFs.clear();
 
-   
+
 }

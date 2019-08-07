@@ -31,8 +31,8 @@ void WizardGroundShootingState::onUpdate()
 	}
 	else
 		this->pData->ppTextureArrays[this->pData->iCurrentArr]->update();
-	if (bulletcount >3) {
-		transition(new WizardFlyingAttackState(this->pData, RectF(16,16, 160, 200)));
+	if (bulletcount >2) {
+		transition(new WizardFlyingAttackState(this->pData, RectF(16,80, 210, 100)));
 	}
 }
 

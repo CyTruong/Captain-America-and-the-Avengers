@@ -14,6 +14,8 @@ MegamanSittingState::MegamanSittingState(MegamanData * data)
 	pData = data;
 	pData->setiCurrentArray(MegamanData::SIT);
 	pData->vx = 0;
+	UIComponents::getInstance()->setSheild_Direction(Direction::createNone());
+
 }
 
 void MegamanSittingState::onMovePressed(Direction d)

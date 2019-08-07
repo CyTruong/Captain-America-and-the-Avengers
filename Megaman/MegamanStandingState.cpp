@@ -12,6 +12,7 @@ MegamanStandingState::MegamanStandingState(MegamanData * data)
 	// má đéo gán đối số :v 
 //LogWriter::getInstance()->write("Vào Standing state");
 	pData = data; 
+	UIComponents::getInstance()->setSheild_Direction(this->pData->dir);
 	pData->setiCurrentArray(MegamanData::STAND);
 	pData->vx = 0;
 }
@@ -26,7 +27,7 @@ void MegamanStandingState::onMovePressed(Direction d)
 
 void MegamanStandingState::onJumpPressed()
 {   // hcmt 
-	transition(new MegamanJumpState(this->pData, false, -8));
+	transition(new MegamanJumpState(this->pData, false, -4));
 }
 
 void MegamanStandingState::onSlidePressed()

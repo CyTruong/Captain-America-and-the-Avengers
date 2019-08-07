@@ -15,7 +15,9 @@ public:
 	virtual void onSlidePressed() {}
 	virtual void onUpdate() {}
 	//va chạm vs obj tĩnh
-	virtual void onCollision(RectF rect) {}
+	virtual void onCollision(RectF rect) {
+		this->pData->isDesTroyed = true;
+	}
 	//va chạm vs các obj đông
 	virtual void onCollision(CollisionRectF rect) {}
 	virtual void onDynamicObjectCollision(CollisionRectF* rect) {}

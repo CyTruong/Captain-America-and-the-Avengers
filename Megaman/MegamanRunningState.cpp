@@ -91,12 +91,13 @@ void MegamanRunningState::onUpdate()
 			pData->isFrire = false;
 		}
 	}
+	UIComponents::getInstance()->setSheild_Direction(this->pData->dir);
 }
 
 
 void MegamanRunningState::onJumpPressed()
 {
-	transition(new MegamanJumpState(this->pData, true, -8.0f));
+	transition(new MegamanJumpState(this->pData, true, -4.0f));
 }
 
 void MegamanRunningState::onSlidePressed()

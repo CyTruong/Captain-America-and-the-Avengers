@@ -12,6 +12,7 @@ public:
 	
 private:
 	BlueSoldierBulletData *pData;
+	float speed;
 public:
 	BlueSoldierBulletSprite( float x, float y, float speed, float angle);
 	virtual void draw(Camera * cam);
@@ -20,7 +21,7 @@ public:
 	{
 		return pData->pState;
 	}
-
+	virtual void Trigger(int index) override;
 	~BlueSoldierBulletSprite();
 };
 

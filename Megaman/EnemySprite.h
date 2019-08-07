@@ -107,8 +107,10 @@ public:
 	}
 	virtual void onCameraCollision(RectF cameraRect)
 	{
-	/*	if (!pData->getBody().checkCollision(cameraRect))
-			pData->isDesTroyed = true;*/
+		if (pData->x < cameraRect.x || pData->y+ pData->body.height > cameraRect.y+ cameraRect.height) {
+
+			pData->isDesTroyed = true;
+		}
 	}
 	virtual int getScore()
 	{

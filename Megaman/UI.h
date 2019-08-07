@@ -1,6 +1,7 @@
 #pragma once
 #include "Sound.h"
 #include "Windows.h"
+#include "Direction.h"
 //#include "EnemySprite.h"
 #include<string> 
 
@@ -65,6 +66,12 @@ public:
 	bool getSheildFlying() {
 		return this->isSheildFlying;
 	}
+	void setSheild_Direction(Direction dir) {
+		this->Sheild_Direction = dir;
+	}
+	Direction getSheild_Direction() {
+		return this->Sheild_Direction;
+	}
 
 private:
 	static UIComponents* instance;
@@ -74,6 +81,7 @@ private:
 	int Megamanhp;
 	float Megaman_X;
 	float Megaman_Y;
+	Direction Sheild_Direction;
 	bool isTargetting;
 	// boss hp 
 	int Shurikanhp; 

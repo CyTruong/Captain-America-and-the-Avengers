@@ -10,7 +10,7 @@ BlueSoldierBulletSprite::BlueSoldierBulletSprite( float x, float y, float speed,
 	BulletSprite::pData = pData;
 	this->pData->isDesTroyed = false; 
 	this->pData->ppTextureArrays = new TextureArray*[BlueSoldierBulletData::COUNT];
-	
+	this->speed = speed;
 	this->angle = angle;
 
 
@@ -51,6 +51,14 @@ void BlueSoldierBulletSprite::update()
 {
 	pData->pState->onUpdate();
 
+}
+
+void BlueSoldierBulletSprite::Trigger(int index)
+{
+	if (this->pData->vx != 0 ) {
+		this->pData->vy = -this->speed;
+		this->pData->vx = -0.1;
+	}
 }
 
 BlueSoldierBulletSprite::~BlueSoldierBulletSprite()

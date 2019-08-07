@@ -27,9 +27,17 @@ CaptainSheildSprite::CaptainSheildSprite(int size, float x, float y, float speed
 		this->pData->ppTextureArrays[CaptainSheildData::DESTROY]->setAnchorPoint(0.5f, 0.5f);
 		this->pData->bodyRects[CaptainSheildData::DESTROY] = RectF(-pData->ppTextureArrays[CaptainSheildData::DESTROY]->getWidth() / 2, -pData->ppTextureArrays[CaptainSheildData::DESTROY]->getHeight(), pData->ppTextureArrays[CaptainSheildData::DESTROY]->getWidth(), pData->ppTextureArrays[CaptainSheildData::DESTROY]->getHeight());
 	
-		this->pData->ppTextureArrays[CaptainSheildData::HOLD] = new TextureArray(RESOURCE_SPRITE, "Bullet", "CaptainSheild_fly", 1, 500);
-		this->pData->ppTextureArrays[CaptainSheildData::HOLD]->setAnchorPoint(0.5f, 0.5f);
-		this->pData->bodyRects[CaptainSheildData::HOLD] = RectF(-pData->ppTextureArrays[CaptainSheildData::FLY]->getWidth() / 2, -pData->ppTextureArrays[CaptainSheildData::HOLD]->getHeight(), pData->ppTextureArrays[CaptainSheildData::HOLD]->getWidth(), pData->ppTextureArrays[CaptainSheildData::HOLD]->getHeight());
+		this->pData->ppTextureArrays[CaptainSheildData::HOLDRIGHT] = new TextureArray(RESOURCE_SPRITE, "Bullet", "CaptainSheild_holdright", 1, 500);
+		this->pData->ppTextureArrays[CaptainSheildData::HOLDRIGHT]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[CaptainSheildData::HOLDRIGHT] = RectF(-pData->ppTextureArrays[CaptainSheildData::HOLDRIGHT]->getWidth() / 2, -pData->ppTextureArrays[CaptainSheildData::HOLDRIGHT]->getHeight(), pData->ppTextureArrays[CaptainSheildData::HOLDRIGHT]->getWidth(), pData->ppTextureArrays[CaptainSheildData::HOLDRIGHT]->getHeight());
+
+		this->pData->ppTextureArrays[CaptainSheildData::HOLDLEFT] = new TextureArray(RESOURCE_SPRITE, "Bullet", "CaptainSheild_holdleft", 1, 500);
+		this->pData->ppTextureArrays[CaptainSheildData::HOLDLEFT]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[CaptainSheildData::HOLDLEFT] = RectF(-pData->ppTextureArrays[CaptainSheildData::HOLDLEFT]->getWidth() / 2, -pData->ppTextureArrays[CaptainSheildData::HOLDLEFT]->getHeight(), pData->ppTextureArrays[CaptainSheildData::HOLDLEFT]->getWidth(), pData->ppTextureArrays[CaptainSheildData::HOLDLEFT]->getHeight());
+
+		this->pData->ppTextureArrays[CaptainSheildData::HOLDAIR] = new TextureArray(RESOURCE_SPRITE, "Bullet", "CaptainSheild_air", 1, 500);
+		this->pData->ppTextureArrays[CaptainSheildData::HOLDAIR]->setAnchorPoint(0.5f, 0.5f);
+		this->pData->bodyRects[CaptainSheildData::HOLDAIR] = RectF(-pData->ppTextureArrays[CaptainSheildData::HOLDAIR]->getWidth() / 2, -pData->ppTextureArrays[CaptainSheildData::HOLDAIR]->getHeight(), pData->ppTextureArrays[CaptainSheildData::HOLDAIR]->getWidth(), pData->ppTextureArrays[CaptainSheildData::HOLDAIR]->getHeight());
 
 	//}
 	/*if (bulletSize == BulletSize::MEDIUM) {
@@ -62,7 +70,7 @@ CaptainSheildSprite::CaptainSheildSprite(int size, float x, float y, float speed
 	pData->y = y;
 
 
-	pData->pState = new CaptainSheildMovingState(pData, speed, angle, CaptainSheildData::HOLD);
+	pData->pState = new CaptainSheildMovingState(pData, speed, angle, CaptainSheildData::HOLDRIGHT);
 
 	//lưu ý dòng này để link con trỏ datat đến bullet sprite
 	BulletSprite::pData = pData;

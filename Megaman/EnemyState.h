@@ -15,7 +15,6 @@ public:
 
 	virtual void transition(SpriteState* state)
 	{
-		LogWriter::getInstance()->write("wizard change state ");
 		pData->pState = state;
 		delete this;
 	}

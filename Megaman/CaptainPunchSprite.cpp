@@ -18,7 +18,6 @@ CaptainPunchSprite::CaptainPunchSprite(int size, float x, float y, float speed, 
 
 	//lưu ý dòng này để link con trỏ datat đến bullet sprite
 	pData->pState = new CaptainPunchActiveState(pData, speed, angle, CaptainPunchData::ACTIVE);
-
 	BulletSprite::pData = pData;
 }
 void CaptainPunchSprite::draw(Camera * cam)

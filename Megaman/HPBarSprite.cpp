@@ -11,7 +11,7 @@ HPBarSprite::HPBarSprite(Camera * & cam, float posX, float posY)
 	this->pData = new ObjectData();
 	this->pData->ppTextureArrays = new TextureArray*[1];
 	
-	this->pData->ppTextureArrays[0] = new TextureArray(RESOURCE_SPRITE, "UI", "HpHub", 1, 60);
+	this->pData->ppTextureArrays[0] = new TextureArray(RESOURCE_SPRITE, "UI", "HpHubCaptain", 1, 60);
 	this->pData->ppTextureArrays[0]->setAnchorPoint(0.5f, 1);
 
 	for (int i = 0; i < UIComponents::getInstance()->getMegamanHp(); i++) //với 10 là max hp
@@ -41,7 +41,7 @@ void HPBarSprite::draw(Camera * cam)
 
 	for (int i = 0; i < remainHp; i++) {
 		this->hpSprites[i]->getobjData()->x = this->pData->x;
-		this->hpSprites[i]->getobjData()->y = this->pData->y - 15 - i * 2	;
+		this->hpSprites[i]->getobjData()->y = this->pData->y - 15 - i * 8	;
 		this->hpSprites[i]->draw(cam);
 	}
 

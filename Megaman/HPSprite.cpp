@@ -11,7 +11,7 @@ HPSprite::HPSprite()
 	
 	this->pData->ppTextureArrays = new TextureArray*[1];
 	
-	this->pData->ppTextureArrays[0] = new TextureArray(RESOURCE_SPRITE, "UI", "HpDot", 1,60);
+	this->pData->ppTextureArrays[0] = new TextureArray(RESOURCE_SPRITE, "UI", "HpDotCaptain", 1,60);
 	this->pData->ppTextureArrays[0]->setAnchorPoint(0.5f, 1);
 
 	this->pData->dir = Direction::createRight();

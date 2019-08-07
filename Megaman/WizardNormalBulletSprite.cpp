@@ -14,7 +14,7 @@ WizardNormalBulletSprite::WizardNormalBulletSprite(float x, float y, float angle
 
 	Sound::getInstance()->play("SingleGunFire", false, 1);
 
-	this->pData->ppTextureArrays[WizardNormalBulletData::FLY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "WizardNormal_fly", 6, 5);
+	this->pData->ppTextureArrays[WizardNormalBulletData::FLY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "WizardNormal_fly2", 1, 5);
 	this->pData->ppTextureArrays[WizardNormalBulletData::FLY]->setAnchorPoint(0.5f, 0.5f);
 
 	this->pData->ppTextureArrays[WizardNormalBulletData::DESTROY] = new TextureArray(RESOURCE_SPRITE, "Bullet", "Dust", 5, 5);
@@ -29,7 +29,7 @@ WizardNormalBulletSprite::WizardNormalBulletSprite(float x, float y, float angle
 	this->pData->x = x;
 	this->pData->y = y;
 
-	this->pData->pState = new WizardNormalBulletMovingState(this->pData, 1.2, angle);
+	this->pData->pState = new WizardNormalBulletMovingState(this->pData, 3, angle);
 }
 
 void WizardNormalBulletSprite::draw(Camera * cam)

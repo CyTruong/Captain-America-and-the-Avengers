@@ -155,7 +155,13 @@ void MegamanSprite::draw(Camera * cam)
 	for (int i = 0; i < pData->Bullets.size(); i++)
 	{
 		if (!pData->Bullets[i]->isDesTroyed()) {
-			pData->Bullets[i]->draw(cam);
+			if (pData->dir.isRight()) {
+				pData->Bullets[i]->draw(cam);
+
+			}
+			else if (pData->dir.isLeft()) {
+				pData->Bullets[i]->draw(cam);
+			}
 		}
 	}
 

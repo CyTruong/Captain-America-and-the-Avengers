@@ -54,7 +54,8 @@ void BlueSoldierRuningState::onUpdate()
 
 		fameExits++; 
 
-		if (fameExits >30)
+		//if (fameExits >30)
+		if (fameExits > 5)
 		{
 			transition(new BlueSoldierShootState(this->pData));
 		}

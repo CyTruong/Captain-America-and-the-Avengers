@@ -60,6 +60,11 @@ public:
 		int posYH = (obj->body.y + obj->body.height) / nodeHeight;
 		for (int i = PosY; i <= posYH; i++) {
 			for (int j = PosX; j <= posXW; j++) {
+				for (int k = 0; k < Nodes[i][j].arrObj.size(); k++) {
+				/*	if (Nodes[i][j].arrObj[k]->id == obj->id) {
+						return;
+					}*/
+				}
 				Nodes[i][j].arrObj.push_back(obj);
 			}
 		}
@@ -81,6 +86,7 @@ public:
 				}
 			}
 		}
+		LogWriter::getInstance()->write("so obj ham 1 B",returnList.size(),1);
 
 	}
 
@@ -95,11 +101,12 @@ public:
 			for (int j = posX; j <= posX2; j++) {
 				for (int k = 0; k < Nodes[i][j].arrCollisionRecF.size(); k++) {
 					if (Nodes[i][j].arrCollisionRecF[k].rect.checkCollision(camRect)) {
-							returnList.push_back(Nodes[i][j].arrCollisionRecF[k]);
+						returnList.push_back(Nodes[i][j].arrCollisionRecF[k]);
 					}
 				}
 			}
 		}
+		LogWriter::getInstance()->write("so obj ham 2", returnList.size(), 2);
 
 	}
 

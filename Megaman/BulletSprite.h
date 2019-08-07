@@ -20,4 +20,7 @@ public :
 	//virtual RectF getBulletBodyRect() = 0;
 	virtual BulletSize ConvertSizeIndex(int size) { return BulletSize::SMALL;  };
 	virtual void Trigger(int index) { };
+	virtual SpriteData* getPdata() {
+		return this->pData;
+	}
 };

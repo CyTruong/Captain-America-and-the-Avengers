@@ -24,10 +24,19 @@ public:
 		this->height = height;
 	}
 	Rect(const Rect& rect) {
-		this->x = rect.x;
-		this->y = rect.y;
-		this->height = rect.height;
-		this->width = rect.width;
+		try {
+			this->x = rect.x;
+			this->y = rect.y;
+			this->height = rect.height;
+			this->width = rect.width;
+		}
+		catch (exception e) {
+			this->x = 0;
+			this->y = 0;
+			this->height = 1;
+			this->width = 1;
+		}
+		
 	}
 	void Translate(T x, T y) {
 		this->x += x;

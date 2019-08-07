@@ -14,6 +14,7 @@ MegamanSlideState::MegamanSlideState(MegamanData* data)
 	this->pData->setiCurrentArray(MegamanData::SLIDE);
 	speedSlideX = 8;
 	Friction = 0.35f;
+	UIComponents::getInstance()->setSheild_Direction(Direction::createNone());
 }
 
 void MegamanSlideState::onMovePressed(Direction dir)
